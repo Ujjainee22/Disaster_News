@@ -1,0 +1,52 @@
+/* Main container - Ensures it fits in one page */
+.main {
+    position: relative;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers content */
+    align-items: center;
+    overflow: hidden; /* Prevents scrolling */
+}
+
+/* Background image container */
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover; /* Cover entire page */
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1; /* Moves background behind content */
+}
+
+/* Text styling */
+.head {
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: white; /* Ensure visibility */
+    z-index: 2;
+}
+
+/* Image container */
+.divImg {
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2; /* Keeps it above background */
+}
+
+/* Flood image styling */
+.img {
+    width: 600px; /* Reduced size to fit within page */
+    height: 600px;
+    object-fit: contain; /* Ensures proper fitting */
+   
+}

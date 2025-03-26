@@ -1,0 +1,45 @@
+.parent{
+    width: 100%;
+    height: max-content;
+   margin-top: 20px;
+ 
+    
+}
+.list{
+    display: flex;
+    gap: 100px;
+    list-style: none; 
+    font-family:Arial, Helvetica, sans-serif;
+   font-size: medium;
+   padding-left: 50px;
+    padding-right: 20px;
+    margin-top: -5px;
+
+}
+.LinkItem{
+    text-decoration: none;
+    color:rgb(12, 11, 11);
+ 
+   
+}
+
+    .listItem {
+       
+     text-align: center;
+      padding-top: 5px;
+        display: inline-block; /* Makes each item a box */
+       
+
+      }
+   .listItem:hover{
+    transform: scale(1.1);
+   }
+ .heading{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: auto;
+    text-align: center;
+    padding-top: 2px;
+    color: white;
+    padding-bottom: 10px;
+
+ }

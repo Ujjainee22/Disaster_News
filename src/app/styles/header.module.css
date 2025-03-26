@@ -1,0 +1,39 @@
+.parent{
+    width: 100%;
+    height: max-content;
+    padding-top: 20px;
+    background-color: black;
+ 
+    padding-bottom: 20px;
+}
+.list{
+    display: flex;
+    gap: 200px;
+    list-style: none; 
+    font-family:Arial, Helvetica, sans-serif;
+   font-size: medium;
+   padding-left: 50px;
+    padding-right: 20px;
+    margin-top: -5px;
+ 
+
+}
+.LinkItem{
+    text-decoration: none;
+    color:white;
+ 
+   
+}
+
+    .listItem {
+       
+     text-align: center;
+     
+      
+        text-align: center;
+       
+
+      }
+   .listItem:hover{
+    transform: scale(1.1);
+   }
