@@ -19,6 +19,7 @@ const Home = () => {
             Real-Time Disaster Updates</h1>
         <p className={styles.subtitle}>Get the latest news on global disasters and emergencies.</p>
         <Link href="/content" className={styles.exploreButton}>Explore</Link>
+        <Link href="/Map">Map</Link>
         </div>
       </section>
       <Footer />
