@@ -72,7 +72,18 @@ const panel = () => {
           />{" "}
           Landslide
         </label>
+        <label>
+          <input
+            type="radio"
+            name="disaster"
+            value="Forest fire"
+            checked={selectDis === "Forest fire"}
+            onChange={handleClick}
+          />{" "}
+          Forest fire
+        </label>
       </div>
+      
       <button onClick={DisasterSelect}>Submit</button>
     </div>
   );
