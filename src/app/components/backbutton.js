@@ -11,4 +11,4 @@ const backbutton = () => {
   )
 }
 
-export default backbutton
+export default backbutton;

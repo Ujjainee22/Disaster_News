@@ -77,7 +77,7 @@ const panel = () => {
             type="radio"
             name="disaster"
             value="Forest fire"
-            checked={selectDis === "Forest Fire"}
+            checked={selectDis === "Forest fire"}
             onChange={handleClick}
           />{" "}
           Forest fire
