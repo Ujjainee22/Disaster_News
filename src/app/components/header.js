@@ -13,7 +13,7 @@ const header = () => {
     </li>
       <Link href="" alt="" className={Styles.LinkItem}>Emergency Alert</Link>
     <li className={Styles.listItem}>
-    <Link href="" alt="" className={Styles.LinkItem}>Emergency</Link>
+    <Link href="/emergency" alt="" className={Styles.LinkItem}>Emergency</Link>
     </li>
     <li className={Styles.listItem}>
     <Link href="" alt="" className={Styles.LinkItem}>Help</Link>
