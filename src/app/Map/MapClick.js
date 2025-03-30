@@ -86,7 +86,7 @@ const MapClick = () => {
         <Popup>
           <b>Selected Location:</b> <br />
           {locName} <br />
-          <button onClick={() => AreaClick(stateName)}>Click</button>
+          <button className={StyleSheet.button} onClick={() => AreaClick(stateName)}>Confirm</button>
         </Popup>
       </Marker>
     ) : null;

@@ -1,0 +1,68 @@
+.sidebar {
+    width: 200px;  
+  height: 100vh; 
+  position: fixed;
+  top: 0;
+  left: 0;
+  background:#003f5c;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  z-index: 1000;
+  }
+  
+  .sidebar h2 {
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-top: 50px;
+    margin-left: 5px;
+    font-size: 25px;
+
+  }
+  
+  .menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .menuItem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+  }
+
+  
+
+
+  .menuItem:hover{
+    background:#005b7f;
+
+  }
+  
+  
+  .submitButton {
+    margin-top: 20px;
+    padding: 10px;
+    background: #ffcc00;
+    color: #003f5c;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .submitButton:hover {
+    background: #ffaa00;
+  }
+  

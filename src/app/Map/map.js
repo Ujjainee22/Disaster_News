@@ -2,7 +2,7 @@
 
 import React from "react";
 import dynamic from "next/dynamic";
-import Panel from "./component/panel"; // Fix import
+import Panel from "@/app/Map/component/panel"; // Fix import
 
 // Dynamically import MapClick with SSR disabled
 const MapClick = dynamic(() => import("./MapClick"), { ssr: false });

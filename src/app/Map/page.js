@@ -4,7 +4,7 @@ import MapComponent from "@/app/Map/map"
 const page = () => {
   return (
     <div>
-    <MapComponent/>
+   <MapComponent/>
     </div>
   )
 }

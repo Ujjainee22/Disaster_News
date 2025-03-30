@@ -1,16 +1,17 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import styles from "@/app/Map/component/panel.module.css";
 
-const panel = () => {
+const Panel = () => {
   const router = useRouter();
-  const [selectDis, setSelectDis] = useState("Flood"); // Default value
+  const [selectDis, setSelectDis] = useState("Flood"); // Default selection
 
-  const handleClick = (e) => {
+  const handleChange = (e) => {
     setSelectDis(e.target.value);
   };
 
-  const DisasterSelect = () => {
+  const handleSubmit = () => {
     if (selectDis) {
       router.push(`/Map?name=${selectDis}`);
     } else {
@@ -18,75 +19,30 @@ const panel = () => {
     }
   };
 
+  const disasterOptions = ["Flood", "Earthquake", "Drought", "Cyclone", "Landslide", "Forest fire"];
+
   return (
-    <div>
-      <h1>SELECT</h1>
-      <div>
-        <label>
-          <input
-            type="radio"
-            name="disaster"
-            value="Flood"
-            checked={selectDis === "Flood"} // Set default checked
-            onChange={handleClick}
-          />{" "}
-          Flood
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="disaster"
-            value="Earthquake"
-            checked={selectDis === "Earthquake"}
-            onChange={handleClick}
-          />{" "}
-          Earthquake
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="disaster"
-            value="Drought"
-            checked={selectDis === "Drought"}
-            onChange={handleClick}
-          />{" "}
-          Drought
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="disaster"
-            value="Cyclone"
-            checked={selectDis === "Cyclone"}
-            onChange={handleClick}
-          />{" "}
-          Cyclone
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="disaster"
-            value="Landslide"
-            checked={selectDis === "Landslide"}
-            onChange={handleClick}
-          />{" "}
-          Landslide
-        </label>
-        <label>
-          <input
-            type="radio"
-            name="disaster"
-            value="Forest fire"
-            checked={selectDis === "Forest fire"}
-            onChange={handleClick}
-          />{" "}
-          Forest fire
-        </label>
-      </div>
-      
-      <button onClick={DisasterSelect}>Submit</button>
+    <>
+    <div className={styles.sidebar}>
+      <h2>MENU</h2>
+      <fieldset className={styles.menu}>
+        {disasterOptions.map((disaster) => (
+          <label key={disaster} className={styles.menuItem}>
+            <input
+              type="radio"
+              name="disaster"
+              value={disaster}
+              checked={selectDis === disaster}
+              onChange={handleChange}
+            />
+            {disaster}
+          </label>
+        ))}
+      </fieldset>
+      <button className={styles.submitButton} onClick={handleSubmit}>SUBMIT</button>
     </div>
+  </>
   );
 };
 
-export default panel;
+export default Panel;
