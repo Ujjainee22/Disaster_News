@@ -1,8 +1,10 @@
 .imageBackground {
   /*background-image: url("/sm.webp");*/
   /*background: linear-gradient(to right, #0f2027, #203a43, #2c5364); */
-  background-color: black;
+  background: url('/embg2.webp'), 
+  linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 77, 64, 0.7));  
   background-size: cover;
+  background-blend-mode: overlay;
   background-attachment: fixed;
   min-height: 100vh;
   display:flex;
@@ -20,14 +22,13 @@
 .textContent h1{
   font-size: 47px;
   font-weight: bold;
-  color:red;
+  color:#ff5900;
   padding-top: 15px;
 
 }
 
 .textContent h2{
   font-size: 41px;
-  font-style: italic;
   font-weight: bold;
 
   color: white;
@@ -35,10 +36,12 @@
 }
 .listContainer{
   width:90%;
-  background: rgba(255, 0, 0, 0.39);
-  padding: 15px;
+  background: rgba(249, 138, 3, 0.623);
+
+  padding-right: 20px;
+  padding-left: 20px;
   text-align: center;
-  color:white;
+  color: white;
 
   display: flex;
   flex-direction: column;
@@ -46,15 +49,20 @@
   justify-content: center;
   text-align: left;
   margin: 0 auto;
+  border-radius: 10px;
+  height: 560px;
 
+}
 
+.listContainer b {
+  color: #800000;
 }
 
 
 
 .disasterCard {
-  width: 90%;
-  background: rgba(243, 238, 235, 0.727);
+  width: 100%;
+  background: rgba(243, 238, 235, 0.51);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -63,7 +71,9 @@
   border-radius: 10px;
   box-shadow: 0px 4px 8px rgba(222, 139, 30, 0.2);
   height: auto;
+  margin: 0 auto;
   margin-bottom: 10px;
+
 }
 
 .listContainer ul{
@@ -102,8 +112,9 @@
   border-radius: 10px;
 }
 
-.disasterContent h3{
-  font-size: 20px;
+.disasterContent p{
+  font-size: 38px;
+  font-weight: bold;
   margin-bottom: 10px;
   font-weight: bolder;
   color:black;
@@ -126,7 +137,7 @@
 
 .disasterContent ul li::before {
   content: "⚠"; /* Warning sign for extra emphasis */
-  color: rgb(255, 89, 0);
+  color: rgb(255, 51, 0);
   font-size: 1.2rem;
   margin-right: 5px;
 }
@@ -141,6 +152,7 @@
   text-decoration: none;
   font-weight: bold;
   margin-top: 10px;
+  margin-left: 14px;
 }
 
 .downloadButton:hover {

@@ -8,16 +8,16 @@ export default function Page() {
       
       <div className={styles.textContent}>
         <h1>BE PREPARED :</h1>
-        <h2><i>STAY SAFE DURING NATURAL DISASTERS</i></h2>
+        <h2>STAY SAFE DURING NATURAL DISASTERS</h2>
       </div>
       <div className={styles.listContainer}>
       <ul>
-        <li><b>Stay Informed:</b> Keep track of weather updates and emergency alerts through news sources and official disaster management apps.</li>
-        <li><b>Emergency Kit:</b> Always have a survival kit with essentials like water, non-perishable food, flashlight, batteries, first-aid supplies, and important documents.</li>
-        <li><b>Evacuation Plan:</b> Familiarize yourself with evacuation routes, emergency exits, and nearest shelters.</li>
-        <li><b>Communication Plan:</b> Ensure family members know how to contact each other in case of an emergency.</li>
-        <li><b>Insurance Coverage:</b> Have appropriate disaster insurance for your home, belongings, and health.</li>
-        <li><b>Drills & Training:</b> Participate in community drills and train yourself in CPR and first aid.
+        <li><b><u>Stay Informed</u> :</b> Keep track of weather updates and emergency alerts through news sources and official disaster management apps.</li>
+        <li><b><u>Emergency Kit</u> :</b> Always have a survival kit with essentials like water, non-perishable food, flashlight, batteries, first-aid supplies, and important documents.</li>
+        <li><b><u>Evacuation Plan</u> :</b> Familiarize yourself with evacuation routes, emergency exits, and nearest shelters.</li>
+        <li><b><u>Communication Plan</u> :</b> Ensure family members know how to contact each other in case of an emergency.</li>
+        <li><b><u>Insurance Coverage</u> :</b> Have appropriate disaster insurance for your home, belongings, and health.</li>
+        <li><b><u>Drills & Training</u> :</b> Participate in community drills and train yourself in CPR and first aid.
         </li>
       </ul>
     
@@ -30,7 +30,7 @@ export default function Page() {
               <img src="/ek.webp" alt="Earthquake" />
             </div>
             <div className={styles.disasterContent}>
-              <h3>Earthquake</h3>
+              <p>Earthquake</p>
               <ol>
   <li>If Indoors:
     <ul>
@@ -66,7 +66,7 @@ export default function Page() {
               <img src="/fl.webp" alt="Flood" />
             </div>
             <div className={styles.disasterContent}>
-              <h3>Flood</h3>
+              <p>Flood</p>
               <ul>
                 <li>Move immediately to higher ground or stay on high ground.</li>
                 <li>Continue to check the media for emergency information.</li>
@@ -84,7 +84,7 @@ export default function Page() {
               <img src="/fr.webp" alt="Fire" />
             </div>
             <div className={styles.disasterContent}>
-              <h3>Forest Fire</h3>
+              <p>Forest Fire</p>
               <ul>
                 <li>Follow all local laws and regulations regarding open fires, campfires, and burning permits.</li>
                 <li>If authorities advise you to evacuate or if your home is at immediate risk, leave immediately. </li>
@@ -103,7 +103,7 @@ export default function Page() {
               <img src="/ls.jpg" alt="" />
             </div>
             <div className={styles.disasterContent}>
-              <h3>Landslide</h3>
+              <p>Landslide</p>
               <ul>
                 <li>Follow evacuation orders and instructions from local authorities.</li>
                 <li>Seek higher ground or move to an elevated position.</li>
@@ -123,7 +123,7 @@ export default function Page() {
               <img src="/dr.jpg" alt="" />
             </div>
             <div className={styles.disasterContent}>
-              <h3>Drought</h3>
+              <p>Drought</p>
               <ul>
                 <li>Reduce water consumption in all areas of your home and daily life.</li>
                 <li>Reuse water from washing vegetables or rinsing dishes.</li>
@@ -146,7 +146,7 @@ export default function Page() {
               <img src="/cy.jpg" alt="" />
             </div>
             <div className={styles.disasterContent}>
-              <h3>Cyclone</h3>
+              <p>Cyclone</p>
               <ul>
                 <li>Do not go outside unless absolutely necessary. 
                 </li>
