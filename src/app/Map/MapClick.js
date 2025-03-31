@@ -4,6 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaf
 import { useState } from "react";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import styles from "@/app/Map/button.module.css";
 
 // Custom marker icon
 const customIcon = new L.Icon({
@@ -86,7 +87,7 @@ const MapClick = () => {
         <Popup>
           <b>Selected Location:</b> <br />
           {locName} <br />
-          <button className={StyleSheet.button} onClick={() => AreaClick(stateName)}>Confirm</button>
+          <button className={styles.button} onClick={() => AreaClick(stateName)}>Confirm</button>
         </Popup>
       </Marker>
     ) : null;

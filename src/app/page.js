@@ -2,7 +2,6 @@ import React from 'react'
 import styles from "@/app/styles/home.module.css"
 import Link from 'next/link'
 import Nav from "@/app/components/nav"
-import Footer from "@/app/components/footer"
 
 const Home = () => {
   return (
@@ -19,13 +18,10 @@ const Home = () => {
             Real-Time Disaster Updates</h1>
         <p className={styles.subtitle}>Get the latest news on global disasters and emergencies.</p>
         <Link href="/content" className={styles.exploreButton}>Explore</Link>
-        <div className={styles.buttonContainer}>
-  <Link href="/Map" className={styles.mapButton}>Go To Map</Link>
-       </div>
+      
   
         </div>
       </section>
-      <Footer />
     </main>
   );
 }

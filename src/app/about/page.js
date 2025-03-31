@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "@/app/styles/about.module.css";
+import Footer from "@/app/components/footer"
 
 
 export default function AboutPage() {
@@ -40,6 +41,7 @@ export default function AboutPage() {
 </div>
 
     </div>
+    <Footer />
     </>
   )
 }

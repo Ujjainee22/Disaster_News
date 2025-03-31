@@ -1,6 +1,8 @@
 import React from "react";
 /*import DownloadButton from "@/app/contact_emer/DownloadButton";*/
 import styles from "@/app/emergency/emergency.module.css"
+import Footer from "@/app/components/footer"
+
 
 export const Page = () => {
   return (
@@ -48,7 +50,9 @@ export const Page = () => {
         </ul>
       </div>
     </div>
-  </div>    </>
+  </div>  
+  <Footer/>
+  </>
   );
 };
 
