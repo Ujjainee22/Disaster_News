@@ -16,7 +16,7 @@ const header = () => {
     <Link href="/emergency" alt="" className={Styles.LinkItem}>Emergency</Link>
     </li>
     <li className={Styles.listItem}>
-    <Link href="" alt="" className={Styles.LinkItem}>Help</Link>
+    <Link href="/faqs" alt="" className={Styles.LinkItem}>Help</Link>
     </li>
   </ul>
 </div>
