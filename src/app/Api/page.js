@@ -6,6 +6,8 @@ const DisasterDropdown = () => {
   const searchParams = useSearchParams();
   const stateName = searchParams.get("place"); // Extract state name from URL
   const disasterName = searchParams.get("name");
+  const dtbefore = searchParams.get("before");
+  const dtaft = searchParams.get("after");
 
   const [news, setNews] = useState([]); // Store news articles
   const [loading, setLoading] = useState(false); // Loading state
@@ -17,7 +19,7 @@ const DisasterDropdown = () => {
       setLoading(true); // Show loading state
 
       try {
-        const backendUrl = `/Api/news?disaster=${disasterName}&place=${stateName}`;
+        const backendUrl = `/api/news?disaster=${disasterName}&place=${stateName}&before=${dtbefore}&after=${dtaft}`;
         console.log("Fetching news from:", backendUrl);
 
         const response = await fetch(backendUrl);
@@ -36,7 +38,10 @@ const DisasterDropdown = () => {
           let title = item.querySelector("title")?.textContent;
           let link = item.querySelector("link")?.textContent;
           let pub_date = item.querySelector("pubDate")?.textContent;
-          newsArray.push({ title, link, pub_date });
+          let rawdesc=item.querySelector("description")?.textContent;
+          let desc= rawdesc.replace(/<[^>]*>?/gm, '');
+          
+          newsArray.push({ title, link, pub_date ,desc});
         });
 
         setNews(newsArray);
@@ -65,6 +70,8 @@ const DisasterDropdown = () => {
                   {item.title}
                 </a>
                 <p>{item.pub_date}</p>
+                <p>{item.desc}</p>
+
               </li>
             ))}
           </ul>

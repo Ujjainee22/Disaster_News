@@ -1,104 +1,160 @@
-.container {
-  /*background: linear-gradient(#333 20%, #666 40%, #0b3111 80%);*/
-  background: url('/embg.webp'), 
-  linear-gradient(135deg, #222, #004d40);  
-  color: #ffffff;
-  padding: 20px 20px;
-  text-align: center;
-  min-height: 100vh;
+.pageWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: white;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* Main Content (Left Column) */
+.newspaperContainer {
+  background-color: #fff;
+  color: #000;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding: 40px;
+  width: 60%;
+  max-width: 900px;
+  flex: 1 1 60%;
+  line-height: 1.8;
+}
+
+/* Image Column (Right Side) */
+.imageGrid {
+  flex: 1 1 35%;
+  width: 40%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  background-size: cover;
-    background-blend-mode: overlay;
-}
-  
- 
-
-.container h1{
-  font-size: 55px;
-  font-weight: bold;
-  color:white;
-  padding-top: 15px;
-  letter-spacing: 2px;
+  gap: 6px;
+  margin-top: 40px;
+  align-content: start;
   margin-bottom: 25px;
-  /*text-decoration: underline 4px solid white;*/
-  text-underline-offset: 5px;
-
 }
 
-.grid_container {
+.imageGrid img {
+  width: 92%;
+  height: 46vh;
+  object-fit: cover;
+}
+
+/* Header Section */
+.headlineRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.headlineRow h1 {
+  font-size: 75px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1;
+  font-family: 'Georgia';
+  width: 50%;
+  margin-right: 10px;
+}
+
+.redText {
+  color: #e61919;
+  margin-bottom: 0px;
+}
+
+.blueText {
+  color: #160b5d;
+  margin-bottom: 0px;
+  letter-spacing: 6px;
+}
+
+.subheading {
+  font-size: 23px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: #333;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  max-width: 400px;
+  margin-left: 165px;
+  padding-top: 5px;
+  align-items: center;
+  flex: 1;
+  line-height: 1.22;
+}
+
+/* Sections Side-by-Side */
+.sectionGrid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 40px;
-  width: 80%;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 35px 40px;
+  margin-top: 40px;
+  border-top: 4px solid #000;
+  row-gap: 8px;
 }
 
-.box {
-  background: rgba(0, 0, 0, 0.7); /* Dark Transparent Background */
-  padding: 25px;
-  border-radius: 10px;
-  color: white;
-  font-size: 1rem;
-  text-align: left;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  width: 80%;
-  min-height: 200px;
-
+/* Individual News Block */
+.newsSection {
+  padding-top: 20px;
+  margin-top: 30px;
 }
 
-.box h2 {
-  color: #aaff00fe;
-margin-bottom: 15px;
-font-size: 33px;
+.newsSection h2 {
+  font-size: 26px;
+  color: #111;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
-.box ul {
-  padding-left: 10px;
+.newsSection ul {
+  padding-left: 0;
+  list-style: none;
 }
 
-.box ul li {
-  list-style-type: none; /* Bullet points */
+.newsSection ul li {
   margin-bottom: 8px;
+  font-size: 20px;
+  margin-left: 15px;
 }
 
-.box a {
-  color: lightblue;
+.newsSection a {
+  color: #0c7cc0;
   text-decoration: none;
 }
 
-.box a:hover {
+.newsSection a:hover {
   text-decoration: underline;
 }
 
-
-/* Download Button */
-.download-btn {
-  display: inline-block;
-  background: #ff0000;
-  color: white;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: background 0.3s, transform 0.2s;
-  box-shadow: 3px 3px 10px rgba(255, 0, 0, 0.5);
-  margin-top: 20px;
+.newsSection a::after {
+  content: " ↗";
+    font-weight: bold;
+  color: #333;
 }
 
-.download-btn:hover {
-  background: #cc0000;
-  transform: scale(1.05);
-  box-shadow: 3px 3px 15px rgba(255, 0, 0, 0.7);
-}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .headlineRow {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-.download-btn:active {
-  transform: scale(0.95);
+  .headlineRow h1,
+  .subheading {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .pageWrapper {
+    flex-direction: column;
+  }
+
+  .imageGrid {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .newspaperContainer {
+    width: 100%;
+  }
 }
