@@ -32,7 +32,7 @@ const MapClick = ({ data }) => {
     const getCoords = async () => {
       try {
         const encodedState = encodeURIComponent(stateh);
-        const response = await fetch(`/Api/forward?encodedStateh=${encodedState}`);
+        const response = await fetch(`/api/forward?encodedStateh=${encodedState}`);
         const result = await response.json();
          console.log(result);
         if (result.length > 0) {
@@ -54,7 +54,7 @@ const MapClick = ({ data }) => {
 
   const AreaClick = () => {
     if (stateName && disasterName) {
-      router.push(`/Api?place=${encodeURIComponent(stateName)}&name=${encodeURIComponent(disasterName)}&before=${encodeURIComponent(dateBefore)}&after=${encodeURIComponent(dateAfter)}`);
+      router.push(`/api?place=${encodeURIComponent(stateName)}&name=${encodeURIComponent(disasterName)}&before=${encodeURIComponent(dateBefore)}&after=${encodeURIComponent(dateAfter)}`);
     }
   };
 

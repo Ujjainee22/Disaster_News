@@ -1,13 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
 
 const Panel = ({ onSubmit }) => {
   const [selectDis, setSelectDis] = useState("Flood"); // Default selection
   const [selectplc, set_selectplc] = useState("Delhi");
-  const [selectedDate, setSelectedDate] = useState(new Date());
-  const [afterDate, setAfterDate] = useState(new Date("2023-01-01")); 
+  const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split("T")[0]); // Default before date
+  const [afterDate, setAfterDate] = useState("2025-01-01"); // Default after date
 
   const handleChange = (e) => {
     setSelectDis(e.target.value);
@@ -19,14 +17,11 @@ const Panel = ({ onSubmit }) => {
 
   const handleSubmit = () => {
     if (selectDis && selectplc) {
-      const formattedBefore = selectedDate.toISOString().split("T")[0];
-      const formattedAfter = afterDate.toISOString().split("T")[0];
-
       onSubmit({
         disaster: selectDis,
         state: selectplc,
-        before: formattedBefore,
-        after: formattedAfter,
+        before: selectedDate,
+        after: afterDate,
       });
     } else {
       alert("Please select a disaster and state");
@@ -71,18 +66,24 @@ const Panel = ({ onSubmit }) => {
       </div>
 
       <div style={{ marginTop: "20px" }}>
-        <p>Select before date:</p>
-        <Calendar onChange={setSelectedDate} value={selectedDate} />
-        <p>Selected before date: {selectedDate.toDateString()}</p>
+        <label>Select before date: </label>
+        <input
+          type="date"
+          value={selectedDate}
+          onChange={(e) => setSelectedDate(e.target.value)}
+        />
       </div>
 
       <div style={{ marginTop: "20px" }}>
-        <p>Select after date:</p>
-        <Calendar onChange={setAfterDate} value={afterDate} />
-        <p>Selected after date: {afterDate.toDateString()}</p>
+        <label>Select after date: </label>
+        <input
+          type="date"
+          value={afterDate}
+          onChange={(e) => setAfterDate(e.target.value)}
+        />
       </div>
 
-      <button onClick={handleSubmit}>SUBMIT</button>
+      <button onClick={handleSubmit} style={{ marginTop: "20px" }}>SUBMIT</button>
     </div>
   );
 };

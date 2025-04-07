@@ -17,7 +17,7 @@ export async function GET(req) {
     try {
       const response = await fetch(nominatimUrl, {
         headers: {
-          "User-Agent": "disasterMap/1.0 (senguptaujjainee@gmail.com)",
+          "User-Agent": "disasterMap/1.0 (guptatiasha5002@gmail.com)",
           "Accept": "application/json",
         },
       });
