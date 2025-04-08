@@ -55,10 +55,12 @@
       
       .exploreButton:hover {
        
-            transform: scale(1.1);
+            transform: scale(1.08);
       }
    
-
+      .exploreButton:active {
+        transform: scale(0.95);
+      }
       .buttonContainer {
         position:absolute;
         left: 56%;
@@ -69,29 +71,4 @@
         padding:230px;
       }
       
-      .mapButton {
-        display: inline-block;
-        padding: 12px 24px;
-        background-color: rgba(255, 68, 0, 0.864);
-        color: white;
-        font-size: 18px;
-        font-weight: bold;
-        border: 2px solid rgba(251, 250, 248, 0.973);
-        border-radius: 8px;
-        text-decoration: none;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        cursor: pointer;
-        transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-      }
-      
-      .mapButton:hover {
-        background-color: rgba(255, 140, 0, 1);
-        transform: scale(1.08);
-      }
-      
-      .mapButton:active {
-        background-color: rgba(255, 50, 0, 1);
-        transform: scale(0.95);
-      }
       

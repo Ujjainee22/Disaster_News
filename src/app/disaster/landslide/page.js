@@ -2,8 +2,10 @@ import React from 'react'
 import Image from "next/image"
 import Styles from "@/app/disaster/disaster.module.css"
 import MapButton from '@/app/components/mapbutton'
+import Footer from '@/app/components/footer'
 const page = () => {
   return (
+    <>
     <div className={Styles.main} >
       <div className={Styles.background}>
       <Image src="/Stores/pawel-czerwinski-OOFSqPWjCt0-unsplash.jpg"  alt=""layout='fill'/>
@@ -15,6 +17,8 @@ const page = () => {
     
     </div>
     </div>
+    <Footer/>
+    </>
   )
 }
 
