@@ -19,7 +19,7 @@ const DisasterDropdown = () => {
       setLoading(true); // Show loading state
 
       try {
-        const backendUrl = `/api/news?disaster=${disasterName}&place=${stateName}&before=${dtbefore}&after=${dtaft}`;
+        const backendUrl = `/Api/news?disaster=${disasterName}&place=${stateName}&before=${dtbefore}&after=${dtaft}`;
         console.log("Fetching news from:", backendUrl);
 
         const response = await fetch(backendUrl);
