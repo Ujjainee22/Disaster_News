@@ -1,131 +1,160 @@
-.container {
-    background: linear-gradient(135deg, #0a0a0a, #0c1b33); 
-    color: #ffffff;
-    font-family: 'Arial', sans-serif;
-    padding: 50px 20px;
-    text-align: center;
-    min-height: 100vh;
-  
-    /*Background Image */
-    background-image: url('/bg.jfif'); 
-    background-size: 1400px 800px; 
-    background-repeat: no-repeat; 
-    background-blend-mode: overlay; 
-  }
-  
-  /* Emergency Contacts Title */
-  .title {
-    font-size: 3rem; 
-    font-weight: 800; 
-    margin-bottom: 25px;
-    color: #ffffff; 
-    text-transform: uppercase; 
-    letter-spacing: 2px; 
-    text-shadow: 3px 3px 15px rgba(255, 255, 255, 0.8); 
-    text-decoration: underline 3px solid rgba(255, 255, 255, 0.8);
-    text-underline-offset: 5px; /* Adjusts the gap between text & underline */
-  }
-  
-  /* Grid Layout */
-  .grid-container {
-    width: 100%;
-    height: 70vh;
-    position: relative;
-  }
-  
-  
-  .box {
-    width: 280px;
-    padding: 16px;
-    border-radius: 10px;
-    background: linear-gradient(145deg, #0a0a0a, #1c2738, #3b2f2f); 
-    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.5);
-    font-size: 14px;
-    text-align: left;
-    position: absolute;
-    color: white; 
-    z-index: 1;
-  }
-  
-  .box h2 {
-    color: white; 
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  /* Links Style hocche */
-  .a {
-    color: lightblue;
-    text-decoration: none;
-  }
-  
-  .a:hover {
-    text-decoration: underline;
-  }
-  
-  
-  .top-left {
-    top: 10px;
-    left: 25px;
-  }
-  
-  .top-right {
-    top: 10px;
-    right: 25px;
-  }
-  
-  .bottom-left {
-    bottom: 10px;
-    left: 25px;
-  }
-  
-  .bottom-right {
-    bottom: 10px;
-    right: 25px;
-  }
-  
-  
-  @media (max-width: 768px) {
-    .grid-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        height: auto;
-    }
-  
-    .box {
-        position: relative;
-        width: 90%;
-        margin: 10px 0;
-    }
-  }
-  
-  /* Download Button */
-  .download-btn {
-    display: inline-block;
-    background: #ff0000; 
-    color: white;
-    font-size: 1.2rem;
+.pageWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: white;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* Main Content (Left Column) */
+.newspaperContainer {
+  background-color: #fff;
+  color: #000;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding: 40px;
+  width: 60%;
+  max-width: 900px;
+  flex: 1 1 60%;
+  line-height: 1.8;
+}
+
+/* Image Column (Right Side) */
+.imageGrid {
+  flex: 1 1 35%;
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 40px;
+  align-content: start;
+  margin-bottom: 25px;
+}
+
+.imageGrid img {
+  width: 92%;
+  height: 46vh;
+  object-fit: cover;
+}
+
+/* Header Section */
+.headlineRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.headlineRow h1 {
+  font-size: 75px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  line-height: 1;
+  font-family: 'Georgia';
+  width: 50%;
+  margin-right: 10px;
+}
+
+.redText {
+  color: #e61919;
+  margin-bottom: 0px;
+}
+
+.blueText {
+  color: #160b5d;
+  margin-bottom: 0px;
+  letter-spacing: 6px;
+}
+
+.subheading {
+  font-size: 23px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: #333;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  max-width: 400px;
+  margin-left: 165px;
+  padding-top: 5px;
+  align-items: center;
+  flex: 1;
+  line-height: 1.22;
+}
+
+/* Sections Side-by-Side */
+.sectionGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 35px 40px;
+  margin-top: 40px;
+  border-top: 4px solid #000;
+  row-gap: 8px;
+}
+
+/* Individual News Block */
+.newsSection {
+  padding-top: 20px;
+  margin-top: 30px;
+}
+
+.newsSection h2 {
+  font-size: 26px;
+  color: #111;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.newsSection ul {
+  padding-left: 0;
+  list-style: none;
+}
+
+.newsSection ul li {
+  margin-bottom: 8px;
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+.newsSection a {
+  color: #0c7cc0;
+  text-decoration: none;
+}
+
+.newsSection a:hover {
+  text-decoration: underline;
+}
+
+.newsSection a::after {
+  content: " ↗";
     font-weight: bold;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: background 0.3s, transform 0.2s;
-    box-shadow: 3px 3px 10px rgba(255, 0, 0, 0.5);
-    margin-top: 20px;
+  color: #333;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .headlineRow {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  
-  .download-btn:hover {
-    background: #cc0000; 
-    transform: scale(1.05);
-    box-shadow: 3px 3px 15px rgba(255, 0, 0, 0.7);
+
+  .headlineRow h1,
+  .subheading {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 10px;
   }
-  
-  .download-btn:active {
-    transform: scale(0.95);
+
+  .pageWrapper {
+    flex-direction: column;
   }
-  
-  
+
+  .imageGrid {
+    width: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .newspaperContainer {
+    width: 100%;
+  }
+}

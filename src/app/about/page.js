@@ -1,10 +1,12 @@
 import React from "react";
 import styles from "@/app/styles/about.module.css";
-
+import Footer from "@/app/components/footer"
+import Header from "@/app/components/header";
 
 export default function AboutPage() {
   return (
     <>
+    <Header/>
     <div className={styles.top}>
         <div className={styles.top_left}>
         <h1>Our Mission</h1>
@@ -40,6 +42,7 @@ export default function AboutPage() {
 </div>
 
     </div>
+    <Footer />
     </>
   )
 }

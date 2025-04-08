@@ -2,17 +2,21 @@
 
 import React from "react";
 import dynamic from "next/dynamic";
-import Panel from "./component/panel"; // Fix import
+import Panel from "@/app/Map/component/panel"; 
+import { useState } from "react";
+
 
 // Dynamically import MapClick with SSR disabled
 const MapClick = dynamic(() => import("./MapClick"), { ssr: false });
 
 const Map = () => {
+  const [formData, setFormData] = useState(null);
+
   return (
-    <>
-      <Panel />
-      <MapClick />
-    </>
+    <div>
+      <Panel onSubmit={setFormData} />
+      <MapClick data={formData} />
+    </div>
   );
 };
 

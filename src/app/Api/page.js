@@ -1,23 +1,28 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
+import styles from "@/app/Api/dropdown.module.css";
+import { formatDistanceToNow, parse } from 'date-fns';
+
 
 const DisasterDropdown = () => {
   const searchParams = useSearchParams();
-  const stateName = searchParams.get("place"); // Extract state name from URL
+  const stateName = searchParams.get("place");
   const disasterName = searchParams.get("name");
+  const dtbefore = searchParams.get("before");
+  const dtaft = searchParams.get("after");
 
-  const [news, setNews] = useState([]); // Store news articles
-  const [loading, setLoading] = useState(false); // Loading state
+  const [news, setNews] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchNews = async () => {
-      if (!disasterName) return; // Stop if no disaster selected
+      if (!disasterName) return;
 
-      setLoading(true); // Show loading state
+      setLoading(true);
 
       try {
-        const backendUrl = `/Api/news?disaster=${disasterName}&place=${stateName}`;
+        const backendUrl = `/Api/news?disaster=${disasterName}&place=${stateName}&before=${dtbefore}&after=${dtaft}`;
         console.log("Fetching news from:", backendUrl);
 
         const response = await fetch(backendUrl);
@@ -26,7 +31,6 @@ const DisasterDropdown = () => {
         const data = await response.json();
         if (data.error) throw new Error(data.error);
 
-        // Parse RSS XML
         const parser = new DOMParser();
         const xml = parser.parseFromString(data.xml, "application/xml");
         const items = xml.querySelectorAll("item");
@@ -36,42 +40,51 @@ const DisasterDropdown = () => {
           let title = item.querySelector("title")?.textContent;
           let link = item.querySelector("link")?.textContent;
           let pub_date = item.querySelector("pubDate")?.textContent;
-          newsArray.push({ title, link, pub_date });
+
+          let rawdesc=item.querySelector("description")?.textContent;
+          //let desc_nb= rawdesc.replace(/<[^>]*>?/gm, '');
+          //let desc = desc_nb.replace("&nbsp;", " ")
+
+          let desc = rawdesc.replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, ' ');
+
+          newsArray.push({ title, link, pub_date, desc });
         });
 
         setNews(newsArray);
       } catch (error) {
         console.error("Error fetching news:", error);
       } finally {
-        setLoading(false); // Hide loading state
+        setLoading(false);
       }
     };
 
     fetchNews();
-  }, [disasterName, stateName]); // Runs when disasterName or stateName changes
+  }, [disasterName, stateName]);
 
   return (
-    <div>
-      <div className="container">
-        <h1>Disaster News for {disasterName} in {stateName}</h1>
+    <div className={styles.container}>
+      <h1>Disaster News for {disasterName} in {stateName}</h1>
 
-        {loading ? (
-          <p>Loading news...</p>
-        ) : news.length > 0 ? (
-          <ul>
-            {news.map((item, index) => (
-              <li key={index}>
-                <a href={item.link} target="_blank" rel="noopener noreferrer">
-                  {item.title}
-                </a>
-                <p>{item.pub_date}</p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p>No news available</p>
-        )}
-      </div>
+      {loading ? (
+        <p>Loading news...</p>
+      ) : news.length > 0 ? (
+        <div className={styles.newsGrid}>
+          {news.map((item, index) => (
+            <div key={index} className={styles.card}>
+              <a href={item.link} target="_blank" rel="noopener noreferrer">
+                {item.title}
+              </a>
+              <p>{item.desc}</p>
+              <br/>
+              <p className={styles.date}>{formatDistanceToNow(new Date(item.pub_date), { addSuffix: true })}
+              </p>
+             
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p>No news available</p>
+      )}
     </div>
   );
 };

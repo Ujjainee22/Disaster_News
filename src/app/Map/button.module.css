@@ -1,0 +1,22 @@
+.button {
+    background-color: #ff5722 !important; /* Vibrant orange */
+    color: white !important;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .button:hover {
+    background-color: #e64a19; /* Slightly darker shade on hover */
+    transform: scale(1.05);
+  }
+  
+  .button:active {
+    background-color: #d84315; /* Even darker shade when clicked */
+    transform: scale(0.95);
+  }
+  

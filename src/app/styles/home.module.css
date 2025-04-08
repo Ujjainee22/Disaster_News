@@ -55,6 +55,20 @@
       
       .exploreButton:hover {
        
-            transform: scale(1.1);
+            transform: scale(1.08);
       }
    
+      .exploreButton:active {
+        transform: scale(0.95);
+      }
+      .buttonContainer {
+        position:absolute;
+        left: 56%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding:230px;
+      }
+      
+      

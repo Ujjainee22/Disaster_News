@@ -27,8 +27,8 @@ export default function Footer() {
         <div className={styles.footer_section}>
           <h3>SUPPORT</h3>
           <ul>
-            <li><Link href="#">FAQ</Link></li>
-            <li><Link href="#">Contact Us</Link></li>
+            <li><Link href="/faqs">FAQ</Link></li>
+            <li><Link href="Contact">Contact Us</Link></li>
           </ul>
         </div>
         <div>
