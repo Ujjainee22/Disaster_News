@@ -24,7 +24,7 @@ const Panel = ({ onSubmit }) => {
         after: afterDate,
       });
     } else {
-      alert("Please select a disaster and state");
+      alert("Please select a disaster and state and a before & after date");
     }
   };
 
