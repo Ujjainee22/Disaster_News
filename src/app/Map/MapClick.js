@@ -4,7 +4,7 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import { useEffect, useRef, useState } from "react";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
-
+import styles from "@/app/Map/button.module.css";
 // Custom marker icon
 const customIcon = new L.Icon({
   iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
@@ -32,7 +32,7 @@ const MapClick = ({ data }) => {
     const getCoords = async () => {
       try {
         const encodedState = encodeURIComponent(stateh);
-        const response = await fetch(`/api/forward?encodedStateh=${encodedState}`);
+        const response = await fetch(`/Api/forward?encodedStateh=${encodedState}`);
         const result = await response.json();
          console.log(result);
         if (result.length > 0) {
@@ -54,7 +54,7 @@ const MapClick = ({ data }) => {
 
   const AreaClick = () => {
     if (stateName && disasterName) {
-      router.push(`/api?place=${encodeURIComponent(stateName)}&name=${encodeURIComponent(disasterName)}&before=${encodeURIComponent(dateBefore)}&after=${encodeURIComponent(dateAfter)}`);
+      router.push(`/Api?place=${encodeURIComponent(stateName)}&name=${encodeURIComponent(disasterName)}&before=${encodeURIComponent(dateBefore)}&after=${encodeURIComponent(dateAfter)}`);
     }
   };
 
@@ -87,7 +87,7 @@ const MapClick = ({ data }) => {
           <Popup>
             <b>Selected Location:</b><br />
             {locName}<br />
-            <button onClick={AreaClick}>Confirm</button>
+            <button className={styles.button} onClick={AreaClick}>Confirm</button>
           </Popup>
         </Marker>
       )}
