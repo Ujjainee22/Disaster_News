@@ -39,8 +39,11 @@ const DisasterDropdown = () => {
           let link = item.querySelector("link")?.textContent;
           let pub_date = item.querySelector("pubDate")?.textContent;
           let rawdesc=item.querySelector("description")?.textContent;
-          let desc= rawdesc.replace(/<[^>]*>?/gm, '');
-          
+          //let desc_nb= rawdesc.replace(/<[^>]*>?/gm, '');
+          //let desc = desc_nb.replace("&nbsp;", " ")
+
+          let desc = rawdesc.replace(/<[^>]*>?/gm, '').replace(/&nbsp;/g, ' ');
+
           newsArray.push({ title, link, pub_date ,desc});
         });
 
