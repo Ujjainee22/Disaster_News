@@ -1,6 +1,7 @@
 import FAQ from "@/app/faqs/c_faq";
 import React from "react";
 import Feedback from '../feedback/page';
+import Footer from "../components/footer";
 const faqs = [
   {
     question: "What was the most dangerous cyclone that hit india till date ?",
@@ -66,6 +67,7 @@ const FAQsPage = () => (
     <h1>FAQs</h1>
     <FAQ faqs={faqs} />
     <Feedback />
+    <Footer/>
   </div>
 );
 

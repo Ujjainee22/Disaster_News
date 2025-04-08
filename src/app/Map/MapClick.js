@@ -1,107 +1,97 @@
 "use client";
-import { useRouter, useSearchParams } from "next/navigation";
-import { MapContainer, TileLayer, Marker, Popup, useMapEvents } from "react-leaflet";
-import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
+import { useEffect, useRef, useState } from "react";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
 // Custom marker icon
 const customIcon = new L.Icon({
   iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-  iconSize: [25, 41], // Default size
-  iconAnchor: [12, 41], // Position anchor
-  popupAnchor: [1, -34], // Popup position
+  iconSize: [25, 41],
+  iconAnchor: [12, 41],
+  popupAnchor: [1, -34],
   shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
   shadowSize: [41, 41],
 });
 
-const MapClick = () => {
-  const [position, setPosition] = useState(null);// for latitude and longitude
-  const [locName, setLocName] = useState(null);// for location
-  const [stateName, setStateName] = useState(null);
+const MapClick = ({ data }) => {
+  const [position, setPosition] = useState(null); // lat/lng
+  const [locName, setLocName] = useState(null);   // display name
+  const [stateName, setStateName] = useState(null); // state name
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const disasterName = searchParams.get("name"); // Get disaster name from URL
 
-  //alert("from mapclick"+Language);
-  //if((disasterName))
- // alert(disasterName);
-  // Function to fetch location name
-  async function getLocationName(lat, lng) {
-    try {
-      const response = await fetch(
-        `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json`
-      );
-      const data = await response.json();
-      console.log(data);
-      let state="";
-      if(data.address.city)
-         state = data.address.city;
-      
-        else
-          state=data.address.state;
-      setStateName(state);
-      console.log(state);
-      if (data && data.display_name) {
-        setLocName(data.display_name);
-      } else {
-        setLocName("Unknown location");
-      }
-    } catch (error) {
-      console.error("Error fetching location:", error);
-      setLocName("Error fetching location");
-    }
-  }
+  const disasterName = data?.disaster;
+  const stateh = data?.state;
+  const dateBefore = data?.before;
+  const dateAfter = data?.after;
 
-  // Click handler inside a separate component
-  const LocationMarker = () => {
-    useMapEvents({
-      click: (e) => {
-        const { lat, lng } = e.latlng;
+  useEffect(() => {
+    if (!stateh) return;
 
-        // Define India's bounding box
-        const minLat = 6.0;
-        const maxLat = 37.0;
-        const minLng = 68.0;
-        const maxLng = 97.0;
-
-        // Check if click is inside India
-        if (lat < minLat || lat > maxLat || lng < minLng || lng > maxLng) {
-          alert("Click inside India only!");
-          return;
+    const getCoords = async () => {
+      try {
+        const encodedState = encodeURIComponent(stateh);
+        const response = await fetch(`/api/forward?encodedStateh=${encodedState}`);
+        const result = await response.json();
+         console.log(result);
+        if (result.length > 0) {
+          const lat = parseFloat(result[0].lat);
+          const lng = parseFloat(result[0].lon);
+          setPosition([lat, lng]);
+          setLocName(result[0].display_name || stateh);
+          setStateName(stateh);
+        } else {
+          console.error("No results found for the given state.");
         }
-
-        console.log("Clicked Coordinates:", lat, lng);
-        setPosition([lat, lng]);
-        getLocationName(lat, lng);
-      },
-    });
-
-    const AreaClick = (stateN) => {
-      router.push(`/Api?place=${encodeURIComponent(stateN)}&name=${encodeURIComponent(disasterName)}`);
-
+      } catch (error) {
+        console.error("Error fetching coordinates:", error);
+      }
     };
-    return position ? (
-      <Marker position={position} icon={customIcon}>
-        <Popup>
-          <b>Selected Location:</b> <br />
-          {locName} <br />
-          <button className={StyleSheet.button} onClick={() => AreaClick(stateName)}>Confirm</button>
-        </Popup>
-      </Marker>
-    ) : null;
+
+    getCoords();
+  }, [stateh]);
+
+  const AreaClick = () => {
+    if (stateName && disasterName) {
+      router.push(`/api?place=${encodeURIComponent(stateName)}&name=${encodeURIComponent(disasterName)}&before=${encodeURIComponent(dateBefore)}&after=${encodeURIComponent(dateAfter)}`);
+    }
+  };
+
+  // 🔍 Zoom the map when position changes
+  const ZoomToPosition = () => {
+    const map = useMap();
+    useEffect(() => {
+      if (position) {
+        map.setView(position, 5.45);
+      }
+    }, [position, map]);
+    return null;
   };
 
   return (
-    <>
-      <MapContainer center={[20.5937, 78.9629]} zoom={5} style={{ height: "100vh", width: "100%" }}>
-        <TileLayer
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          attribution="&copy; OpenStreetMap contributors"
-        />
-        <LocationMarker />
-      </MapContainer>
-    </>
+    <MapContainer
+      center={[20.5937, 78.9629]}
+      zoom={5}
+      style={{ height: "100vh", width: "100%" }}
+    >
+      <TileLayer
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+        attribution="&copy; OpenStreetMap contributors"
+      />
+
+      <ZoomToPosition />
+
+      {position && (
+        <Marker position={position} icon={customIcon}>
+          <Popup>
+            <b>Selected Location:</b><br />
+            {locName}<br />
+            <button onClick={AreaClick}>Confirm</button>
+          </Popup>
+        </Marker>
+      )}
+    </MapContainer>
   );
 };
 

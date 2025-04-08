@@ -1,7 +1,7 @@
 .sidebar {
     width: 200px;  
   height: 100vh; 
-  position: fixed;
+  position:absolute;
   top: 0;
   left: 0;
   background:#003f5c;

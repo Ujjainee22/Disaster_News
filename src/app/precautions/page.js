@@ -1,9 +1,11 @@
 import styles from "@/app/precautions/styles.module.css";
 import Footer from "@/app/components/footer"
 
+
 export default function Page() {
   return (
   <>
+  
     <div className={styles.imageBackground}>
       
       <div className={styles.textContent}>
