@@ -23,6 +23,10 @@ const Panel = ({ onSubmit }) => {
         before: selectedDate,
         after: afterDate,
       });
+
+      alert("Submitted successfully!\nNow click on the map to select a location, then press 'Confirm' to proceed.");
+ 
+
     } else {
       alert("Please select a disaster and state and a before & after date");
     }
