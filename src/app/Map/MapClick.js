@@ -63,7 +63,7 @@ const MapClick = ({ data }) => {
     const map = useMap();
     useEffect(() => {
       if (position) {
-        map.setView(position, 5.45);
+        map.setView(position, 5.47);
       }
     }, [position, map]);
     return null;
