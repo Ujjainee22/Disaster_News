@@ -14,8 +14,10 @@ const Map = () => {
 
   return (
     <div>
+    
       <Panel onSubmit={setFormData} />
-      <MapClick data={formData} />
+      { <MapClick data={formData} />}
+     
     </div>
   );
 };

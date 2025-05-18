@@ -1,37 +1,41 @@
+//displaying the news 
 "use client";
 import React, { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
-import styles from "@/app/Api/dropdown.module.css";
+import styles from "@/app/mapdata/dropdown.module.css"
 import { formatDistanceToNow, parse } from 'date-fns';
+import { useSearchParams } from "next/navigation";
+import Nav from "@/app/components/header"
+const Page = () => {
 
-
-const DisasterDropdown = () => {
   const searchParams = useSearchParams();
   const stateName = searchParams.get("place");
   const disasterName = searchParams.get("name");
   const dtbefore = searchParams.get("before");
   const dtaft = searchParams.get("after");
-
+console.log("Parameters recieved as ",stateName,disasterName,dtbefore,dtaft);
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchNews = async () => {
+   
       if (!disasterName) return;
 
       setLoading(true);
 
       try {
-        const backendUrl = `/Api/news?disaster=${disasterName}&place=${stateName}&before=${dtbefore}&after=${dtaft}`;
+        const backendUrl = `/api/news?disaster=${disasterName}&place=${stateName}&before=${dtbefore}&after=${dtaft}`;
         console.log("Fetching news from:", backendUrl);
 
         const response = await fetch(backendUrl);
+        console.log(response);
         if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
         const data = await response.json();
         if (data.error) throw new Error(data.error);
 
         const parser = new DOMParser();
+        
         const xml = parser.parseFromString(data.xml, "application/xml");
         const items = xml.querySelectorAll("item");
 
@@ -59,9 +63,11 @@ const DisasterDropdown = () => {
     };
 
     fetchNews();
-  }, [disasterName, stateName]);
+  }, [disasterName, stateName, dtbefore, dtaft]);
 
   return (
+    <>
+    <Nav/> 
     <div className={styles.container}>
       <h1>Disaster News for {disasterName} in {stateName}</h1>
 
@@ -86,7 +92,8 @@ const DisasterDropdown = () => {
         <p>No news available</p>
       )}
     </div>
+    </>
   );
 };
 
-export default DisasterDropdown;
+export default Page;
