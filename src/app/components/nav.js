@@ -1,19 +1,26 @@
+"use client"
+
 import styles from "@/app/styles/navbar.module.css"
 import Link from "next/link";
+import React, { useState } from 'react';
 
 
-import React from 'react'
 
 const Nav = () => {
+
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
    <nav className={styles.navbar}>
-    <div >
-     <ul className={styles.navbarList}>
+    <div className={styles.menuToggle} onClick={() => setMenuOpen(!menuOpen)}>
+        ☰
+      </div>
+      <ul className={`${styles.navbarList} ${menuOpen ? styles.active : ''}`}>
       <li className={styles.navbarItem}>
         <Link className={styles.navbarLink} href="/">Home</Link>
       </li>
       <li className={styles.navbarItem}>
-        <Link className={styles.navbarLink} href="/about">About</Link>
+        <Link className={styles.navbarLink} href="/about">About Us</Link>
       </li>
       <li className={styles.navbarItem}>
         <Link className={styles.navbarLink} href="/precautions">Safety Measures</Link>
@@ -21,9 +28,14 @@ const Nav = () => {
       <li className={styles.navbarItem}>
         <Link className={styles.navbarLink} href="/emergency"> Emergency</Link>
       </li>
+      <li className={styles.navbarItem}>
+        <Link className={styles.navbarLink} href="/faqs"> Help</Link>
+      </li>
+      <li className={styles.navbarItem}>
+          <Link href="/Map" className={styles.navbarLink}>View Map</Link>
+        </li>
       
      </ul>
-    </div>
    </nav>
   )
 }

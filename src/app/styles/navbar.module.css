@@ -1,12 +1,13 @@
 
 .navbar {
     position: fixed; 
-    top: 20;
+    top: 20px;
     left: 0;
     width: 100%;
-    padding-left: 1000px;
-    
+    display: flex;
+    justify-content: flex-end;
     z-index: 1000; 
+    padding: 0 50px;
   }
   
   
@@ -42,3 +43,98 @@
     transform: scale(1.1);
   }
   
+.menuToggle {
+display: none;
+}
+
+@media (max-width: 599px) {
+.navbar {
+justify-content: space-between;
+padding: 10px 20px;
+}
+
+.navbarList {
+position: absolute;
+top: 60px;
+right: 20px;
+background-color: #000;
+flex-direction: column;
+gap: 10px;
+padding: 20px;
+display: none;
+border-radius: 8px;
+}
+
+.navbarList.active {
+display: flex;
+}
+
+.menuToggle {
+display: block;
+font-size: 24px;
+color: white;
+cursor: pointer;
+}
+
+.navbarLink {
+font-size: 15px;
+padding: 10px;
+}
+}
+
+/* Tablet & Large Tablets (600px–1079px) */
+@media (min-width: 600px) and (max-width: 1079px) {
+.navbar {
+justify-content: space-between;
+padding: 12px 30px;
+}
+
+.navbarList {
+position: absolute;
+top: 60px;
+right: 30px;
+background-color: #000;
+flex-direction: column;
+gap: 8px;
+padding: 22px;
+display: none;
+border-radius: 10px;
+}
+
+.navbarList.active {
+display: flex;
+}
+
+.menuToggle {
+display: block;
+font-size: 26px;
+color: white;
+cursor: pointer;
+}
+
+.navbarLink {
+font-size: 16px;
+padding: 12px;
+}
+}
+
+/* Desktop (1080px and above) */
+@media (min-width: 1080px) {
+.navbar {
+justify-content: flex-end;
+padding: 0 50px;
+}
+
+.navbarList {
+display: flex !important;
+flex-direction: row;
+position: static;
+background-color: transparent;
+gap: 30px;
+padding: 0;
+}
+
+.menuToggle {
+display: none;
+}
+}

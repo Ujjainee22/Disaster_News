@@ -30,7 +30,8 @@
 
 .grid_card h2{
     font-size: 1.8rem;
-    margin-bottom: 1rem;
+    margin-bottom:4px;
+    padding-top: 2px;
 }
 
 .grid_card p{
@@ -47,11 +48,10 @@
 
 .grid_card i{
     font-size: 4.2rem;
-    color: #e50914;
+    color: #aa0b13;
 }
 
 
-/*for the main contact two section*/
 
 .contact_section{
     margin: 6rem auto;
@@ -64,7 +64,9 @@
 
 
 .contact_section span{
-    color: #e50914;
+    color: #B30000;
+    font-size: larger;
+    padding-bottom: 10px;
 }
 
 .contact_form{
@@ -73,6 +75,7 @@
     padding: 3.2rem;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     text-align: left;
+    margin-top: 15px;
 }
 
 .input_field{
@@ -89,7 +92,7 @@
     display: block;
     border: none;
     width: 100%;
-    margin-top: .5rem;
+    margin-top: .3rem;
     padding: .8rem 1rem;
     border-radius: .3rem;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
@@ -129,4 +132,17 @@
         margin: 6rem auto;
     }
 
+}
+
+.button{
+    background-color: #aa0b13;
+    color: white;
+    width:60px;
+    height: 30px;
+    font-family: serif;
+    font-size: 18px;
+}
+
+.button:hover{
+    background-color: #f32121;
 }

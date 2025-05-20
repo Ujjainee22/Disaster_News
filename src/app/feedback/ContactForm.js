@@ -72,7 +72,7 @@ export default function ContactForm() {
             name="message"
             id="message"
             rows={5}
-            placeholder="Enter your Message"
+            placeholder="Enter your message"
             value={formData.message}
             onChange={handleChange}
             required
@@ -82,7 +82,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <button type="submit">Send</button>
+        <button type="submit" className={styles.button}>Send</button>
       </div>
     </form>
   );

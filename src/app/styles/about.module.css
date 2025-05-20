@@ -1,151 +1,69 @@
-
-.top {
+.section {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  min-height: 400px;
+  background-color: #f5f5f5;
+  border-bottom: 1px solid #ccc;
+  font-family: 'Georgia',serif;
+
 }
 
-.top_right {
-  width: 40%; /* 40% width */
-  height: 100%;
-  background: url('/ab1.jpg') no-repeat center center;
-  background-size: cover;
+.section.reverse {
+  flex-direction: row-reverse;
+  background-color: #eaeaea;
+}
+
+.section:nth-of-type(2) .text {
+  text-align: justify;
+}
+
+.section:nth-of-type(2) {
+  background-color:rgba(0, 0, 0, 0.901);
+  color:white;
+}
+
+.section:nth-of-type(2) h2{
+  color: #ff6b6b;
 }
 
 
-.top_left{
-  width: 60%; /* 60% width */
-  height: 100%;
-  background: linear-gradient(to right, #013256, #026AA7);
+
+.text, .image {
+  flex: 1 1 50%;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.text {
   display: flex;
   flex-direction: column;
-  color:white;
   justify-content: center;
-  padding-left: 15px;
-  padding-right: 15px;
 }
 
-.top_left h1{
-  margin-bottom: 5px;
-
+.text h1, .text h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #8B0000;
+  font-family: 'Georgia',serif;
 }
 
-.top_right h1 {
-  font-size: 32px;
+.text p, .text li {
+  font-size: 1.1em;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }
 
-.top_right p {
-  font-size: 18px;
-  line-height: 1.5;
+.text ul {
+  padding-left: 20px;
 }
 
-  
-  /* Center Section */
-  .center {
-    display: flex;
-    justify-content: center;
-    width:100%;
-    height:300px;
+.image {
+  flex: 0 0 35%; /* shrink image area to 35% width */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 300px;
+}
 
-  }
-  .center_left {
-    width: 20%;
-    height: 100%;
-    background: linear-gradient(to bottom, #FF5733, #FF8C42);    
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-  }
-
-  
-  .center_left h3 {
-    font-size: 32px;
-    font-weight: bold;
-    color: #fff;
-    margin: 5px 0;
-    animation: fadeIn 1s ease-in-out;
-  }
-  
-  
-  .center_mid {
-    width: 60%;
-    height: 100%;
-    background: rgb(0, 0, 0,0.7);
-    color: white;
-    padding: 20px;
-  }
-  
-  .center_mid h2 {
-    text-align: center;
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .center_mid ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .center_mid li {
-    font-size: 16px;
-  }
-  
-  .center_right {
-    width: 20%;
-    height: 100%;
-    background: url('/people.webp') no-repeat center center;
-    background-size: cover;
-  }
-
-
-.bottom {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 250px;
-  }
-  
-  .bottom_left {
-    width: 40%;
-    height: 100%;
-    background: url('/jhor1.jpg') no-repeat center center;
-    background-repeat: no-repeat;
-
-  size: 32px;
-  text-align:center;
-  align-items: center;
-  justify-content: center;  
-  }
-  .bottom_left p {
-    font-size: 32px; /* Increase size */
-    font-weight: bold; /* Make text bold */
-    color: white; /* Set text color to white */
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Optional: Add shadow for better visibility */
-    padding-top: 100px;
-  }
-  
-  .bottom_right {
-    width: 60%;
-    height: 100%;
-    background: linear-gradient(to left, #F4EAE0, #E0C9A6);
-    color: black;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  .bottom_right h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .bottom_right p {
-    font-size: 16px;
-    line-height: 1.5;
-  }
-  

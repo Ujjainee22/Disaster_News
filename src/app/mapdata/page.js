@@ -24,7 +24,7 @@ console.log("Parameters recieved as ",stateName,disasterName,dtbefore,dtaft);
       setLoading(true);
 
       try {
-        const backendUrl = `/api/news?disaster=${disasterName}&place=${stateName}&before=${dtbefore}&after=${dtaft}`;
+        const backendUrl = `/Api/news?disaster=${disasterName}&place=${stateName}&before=${dtbefore}&after=${dtaft}`;
         console.log("Fetching news from:", backendUrl);
 
         const response = await fetch(backendUrl);

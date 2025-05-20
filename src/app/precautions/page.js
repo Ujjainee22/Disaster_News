@@ -7,6 +7,8 @@ export default function Page() {
   return (
   <>
   <Header/>
+  <div className={styles.pageWrapper}>
+
     <div className={styles.imageBackground}>
       
       <div className={styles.textContent}>
@@ -15,7 +17,7 @@ export default function Page() {
       </div>
 
       <div className={styles.section}>
-      <h3 className={styles.sectionHeading}>GENERAL PRECAUTIONS</h3>
+      <h3 className={styles.sectionHeading}>&nbsp;GENERAL PRECAUTIONS</h3>
       <div className={styles.listContainer}>
 
       <ul>
@@ -169,6 +171,7 @@ export default function Page() {
           </div>
 
     </div>
+  </div>
   </div>
   <Footer />
     </>

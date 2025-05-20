@@ -1,29 +1,40 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from "next/link";
 import { useRouter } from 'next/navigation';
 import { IoArrowBackCircle } from "react-icons/io5";
+import { GiHamburgerMenu } from "react-icons/gi";
 import Styles from "@/app/styles/header.module.css";
 
 const Header = () => {
   const router = useRouter();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleBack = (e) => {
     e.preventDefault();
-    router.back(); // Go to previous page
+    router.back();
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(prev => !prev);
   };
 
   return (
     <div className={Styles.parent}>
-      <ul className={Styles.list}>
+      <div className={Styles.menuToggle} onClick={toggleMenu}>
+        <GiHamburgerMenu size={26} />
+      </div>
+      <ul className={`${Styles.list} ${menuOpen ? Styles.showMenu : ''}`}>
         <li className={Styles.listItem}>
           <a href="#" onClick={handleBack} className={Styles.LinkItem}>
             <IoArrowBackCircle size={30} />
           </a>
         </li>
         <li className={Styles.listItem}>
-          <Link href="/content" className={Styles.LinkItem}>logo</Link>
+          <div className={Styles.logoContainer}>
+            <img src="/lgfin.png" alt="Website Logo" className={Styles.logoImage} />
+          </div>
         </li>
         <li className={Styles.listItem}>
           <Link href="/" className={Styles.LinkItem}>Explore</Link>
@@ -39,6 +50,9 @@ const Header = () => {
         </li>
         <li className={Styles.listItem}>
           <Link href="/faqs" className={Styles.LinkItem}>Help</Link>
+        </li>
+        <li className={Styles.listItem}>
+          <Link href="/about" className={Styles.LinkItem}>About Us</Link>
         </li>
       </ul>
     </div>

@@ -10,6 +10,7 @@
   flex-direction: column;
   padding: 20px;
   z-index: 500;
+  margin-top: 60px;
   }
   
   .sidebar h2 {
@@ -19,7 +20,6 @@
     padding-top: 50px;
     margin-left: 5px;
     font-size: 25px;
-
   }
   
   .menu {
@@ -40,8 +40,6 @@
     align-items: flex-start;
     gap: 5px;
     font-size: 20px;
-    
-    
   }
 
   
