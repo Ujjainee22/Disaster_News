@@ -65,35 +65,59 @@ console.log("Parameters recieved as ",stateName,disasterName,dtbefore,dtaft);
     fetchNews();
   }, [disasterName, stateName, dtbefore, dtaft]);
 
+
+  const handleDownload = () => {
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(news, null, 2));
+    const downloadAnchorNode = document.createElement("a");
+    downloadAnchorNode.setAttribute("href", dataStr);
+    downloadAnchorNode.setAttribute("download", `news_${disasterName}_${stateName}.json`);
+    document.body.appendChild(downloadAnchorNode); // required for Firefox
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+  };
+
+
+
+
+
+
   return (
     <>
     <Nav/> 
     <div className={styles.container}>
       <h1>Disaster News for {disasterName} in {stateName}</h1>
 
-      {loading ? (
-        <p>Loading news...</p>
-      ) : news.length > 0 ? (
-        <div className={styles.newsGrid}>
-          {news.map((item, index) => (
-            <div key={index} className={styles.card}>
-              <a href={item.link} target="_blank" rel="noopener noreferrer">
-                {item.title}
-              </a>
-              <p>{item.desc}</p>
-              <br/>
-              <p className={styles.date}>{formatDistanceToNow(new Date(item.pub_date), { addSuffix: true })}
-              </p>
-             
+ {loading ? (
+          <p>Loading news...</p>
+        ) : news.length > 0 ? (
+          <>
+            {/* ✅ Added Download JSON Button */}
+            <button onClick={handleDownload} style={{ marginBottom: "1rem" }}>
+              Download News as JSON
+            </button>
+
+            <div className={styles.newsGrid}>
+              {news.map((item, index) => (
+                <div key={index} className={styles.card}>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                    {item.title}
+                  </a>
+                  <p>{item.desc}</p>
+                  <br />
+                  <p className={styles.date}>
+                    {formatDistanceToNow(new Date(item.pub_date), { addSuffix: true })}
+                  </p>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-      ) : (
-        <p>No news available</p>
-      )}
-    </div>
+          </>
+        ) : (
+          <p>No news available</p>
+        )}
+      </div>
     </>
   );
 };
+
 
 export default Page;
