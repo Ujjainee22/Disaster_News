@@ -1,3 +1,4 @@
+//use nominatim api to get the location on the map
 export async function GET(req) {
   const { searchParams } = new URL(req.url);
   const encodedStateh = searchParams.get("encodedStateh");

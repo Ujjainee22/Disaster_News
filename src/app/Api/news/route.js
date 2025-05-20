@@ -1,10 +1,11 @@
+// to fetch the google rss
 export async function GET(req) {
   const { searchParams } = new URL(req.url);
   const disaster = searchParams.get("disaster");
   const place = searchParams.get("place");
   const dtb4 = searchParams.get("before");
   const dtaft = searchParams.get("after");
-
+  console.log("parameters received in route.js:",disaster, place,dtb4,dtaft);
   if (!disaster || !place) {
     return new Response(JSON.stringify({ error: "Missing parameters" }), { status: 400 });
   }

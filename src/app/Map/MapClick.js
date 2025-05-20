@@ -1,9 +1,10 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
-import { useEffect, useRef, useState } from "react";
+import { useEffect,  useState } from "react";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+
 import styles from "@/app/Map/button.module.css";
 // Custom marker icon
 const customIcon = new L.Icon({
@@ -16,6 +17,7 @@ const customIcon = new L.Icon({
 });
 
 const MapClick = ({ data }) => {
+    
   const [position, setPosition] = useState(null); // lat/lng
   const [locName, setLocName] = useState(null);   // display name
   const [stateName, setStateName] = useState(null); // state name
@@ -32,7 +34,7 @@ const MapClick = ({ data }) => {
     const getCoords = async () => {
       try {
         const encodedState = encodeURIComponent(stateh);
-        const response = await fetch(`/Api/forward?encodedStateh=${encodedState}`);
+        const response = await fetch(`/api/forward?encodedStateh=${encodedState}`);
         const result = await response.json();
          console.log(result);
         if (result.length > 0) {
@@ -51,12 +53,24 @@ const MapClick = ({ data }) => {
 
     getCoords();
   }, [stateh]);
-
+  
+  
+ 
   const AreaClick = () => {
     if (stateName && disasterName) {
-      router.push(`/Api?place=${encodeURIComponent(stateName)}&name=${encodeURIComponent(disasterName)}&before=${encodeURIComponent(dateBefore)}&after=${encodeURIComponent(dateAfter)}`);
+      console.log("Navigating to mapdata with:", {
+        place: stateName,
+        name: disasterName,
+        before: dateBefore,
+        after: dateAfter,
+      });
+  
+      router.push(
+        `/mapdata?place=${encodeURIComponent(stateName)}&name=${encodeURIComponent(disasterName)}&before=${encodeURIComponent(dateBefore)}&after=${encodeURIComponent(dateAfter)}`
+      );
     }
   };
+  
 
   // 🔍 Zoom the map when position changes
   const ZoomToPosition = () => {
@@ -65,11 +79,14 @@ const MapClick = ({ data }) => {
       if (position) {
         map.setView(position, 5.47);
       }
+  
     }, [position, map]);
     return null;
   };
 
   return (
+    <>
+ 
     <MapContainer
       center={[20.5937, 78.9629]}
       zoom={5}
@@ -92,6 +109,8 @@ const MapClick = ({ data }) => {
         </Marker>
       )}
     </MapContainer>
+    
+    </>
   );
 };
 
