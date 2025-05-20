@@ -1,3 +1,4 @@
+//dropdownload panel
 "use client";
 import React, { useState } from "react";
 import styles from "@/app/Map/component/panel.module.css";
@@ -38,11 +39,14 @@ const Panel = ({ onSubmit }) => {
   ];
 
   return (
+    <>
+   
     <div className={styles.sidebar}>
       <h2>MENU</h2>
 
       <div className={styles.menu}>
         <div className={styles.menuItem}>
+         
           <label htmlFor="disaster">Select Disaster:</label>
           <select
             id="disaster"
@@ -99,6 +103,7 @@ const Panel = ({ onSubmit }) => {
         </button>
       </div>
     </div>
+    </>
   );
 };
 

@@ -3,15 +3,13 @@ import Image from "next/image"
 import Styles from "@/app/disaster/disaster.module.css"
 import MapButton from '@/app/components/mapbutton'
 import Footer from "@/app/components/footer"
-
+import Back from "@/app/disaster/backbutton"
 
 const page = () => {
   return (
     <>
     <div className={Styles.main} >
-      <div className={Styles.background}>
-      <Image src="/Stores/pawel-czerwinski-OOFSqPWjCt0-unsplash.jpg"  alt=""layout='fill'/>
-      </div>
+        <Back/>
  <MapButton/>
       <div><p className={Styles.head}>The Drought Prone Areas in India</p></div>
     <div className={Styles.divImg}>
