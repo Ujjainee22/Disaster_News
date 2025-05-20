@@ -1,8 +1,7 @@
 .imageBackground {
   /*background-image: url("/sm.webp");*/
   /*background: linear-gradient(to right, #0f2027, #203a43, #2c5364); */
-  background: url('/embg2.webp'), 
-  linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 77, 64, 0.7));  
+  background: white;
   background-size: cover;
   background-blend-mode: overlay;
   background-attachment: fixed;
@@ -11,6 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: 'Georgia',serif;
 }
 
 .textContent{
@@ -20,104 +20,126 @@
 }
 
 .textContent h1{
-  font-size: 47px;
-  font-weight: bold;
-  color:#ff5900;
-  padding-top: 15px;
+  font-size: 60px;
+  font-weight: bolder;
+  font-family: 'Georgia';
+  color:white;
+  background-color:rgb(188, 13, 13);
+  letter-spacing: 10px;
+  word-spacing: 8px;
+  text-align: center;
+  width:95vw;
+  margin-top: 37px;
 
 }
 
 .textContent h2{
-  font-size: 41px;
-  font-weight: bold;
-
-  color: white;
-  margin-bottom: 20px;
+  font-size: 60px;
+  font-family:'Franklin Gothic Heavy ';
+  color: black;
+  margin-top: 2x;
+  margin-bottom: 15px;
 }
+
 .listContainer{
-  width:90%;
-  background: rgba(249, 138, 3, 0.623);
-
-  padding-right: 20px;
-  padding-left: 20px;
-  text-align: center;
-  color: white;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: center;
-  text-align: left;
-  margin: 0 auto;
-  border-radius: 10px;
-  height: 560px;
-
-}
-
-.listContainer b {
-  color: #800000;
-}
-
-
-
-.disasterCard {
-  width: 100%;
-  background: rgba(243, 238, 235, 0.51);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(222, 139, 30, 0.2);
-  height: auto;
-  margin: 0 auto;
-  margin-bottom: 10px;
+  display:grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 2rem;
+  width:95vw;
+  font-family: 'Georgia',serif;
+  line-height: 1.3;
+  letter-spacing: 0.1px;
+  margin: 10px;
+  align-items: start;
+  text-align: justify;
+  padding: top 0;
 
 }
 
 .listContainer ul{
   list-style-type: none;
+  margin-top: 0;  
 }
 .listContainer li{
-  text-align: justify;
+
   font-size: 30px;
   margin-bottom: 10px;
 }
 
-.disasterContainer {
-  width: 90%;
+
+.sectionHeading {
+  font-size: 35px;
+  font-weight:bold;
+  font-family: 'Georgia';
+  color: black;
+  border-bottom: 4px solid #000;
+  padding-bottom: 0.3rem;
+  margin-bottom:0;
+  max-width: 49%; 
+
+  
+}
+
+
+
+.disasterCard {
   display: flex;
-  flex-direction: column; 
-  align-items: center;
-  gap: 20px;
-  margin:0 auto;
-  margin-top: 20px;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 1rem;
+  border-left: 2px solid #000;
+  
+
+
+}
+
+.disasterCard:nth-child(1),.disasterCard:nth-child(2) {
+  /* Removes left border from every first column in each row */
+  border-left:  none;
+}
+
+
+
+
+
+
+
+.disasterContainer {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 2rem;
+  position: relative;
+  margin-bottom: 50px;
+  width: 95vw;
 
 }
 
 .disasterImage {
-  flex: 0 0 35%; /* Takes 30% of the disasterCard width */
-  height: 100%; 
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  
 }
 
 .disasterImage img {
   width: 100%;
-  height: 100%; 
-  object-fit: cover; 
-  border-radius: 10px;
+  height:300px ;
+  object-fit:cover; 
 }
 
+
 .disasterContent p{
-  font-size: 38px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 35px;
   font-weight: bolder;
-  color:black;
+  text-transform: uppercase;
+  border-bottom: 4px solid black;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.2rem;
+  max-width: 1000;
+  text-align: justify;
+  color:rgb(188, 13, 13);
   
 }
 
@@ -130,7 +152,7 @@
 
 .disasterContent ul li,
 .disasterContent ol li {
-  font-size: 1.1rem;
+  font-size: 27px;
   margin-bottom: 5px;
   line-height: 1.5;
 }
@@ -138,7 +160,7 @@
 .disasterContent ul li::before {
   content: "⚠"; /* Warning sign for extra emphasis */
   color: rgb(255, 51, 0);
-  font-size: 1.2rem;
+  font-size: 30px;
   margin-right: 5px;
 }
 

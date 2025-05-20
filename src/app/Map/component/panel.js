@@ -73,7 +73,7 @@ const Panel = ({ onSubmit }) => {
         </div>
 
         <div className={styles.menuItem}>
-          <label htmlFor="before">Select before date:</label>
+          <label htmlFor="before">Select Before Date:</label>
           <input
             id="before"
             type="date"
@@ -83,7 +83,7 @@ const Panel = ({ onSubmit }) => {
         </div>
 
         <div className={styles.menuItem}>
-          <label htmlFor="after">Select after date:</label>
+          <label htmlFor="after">Select After Date:</label>
           <input
             id="after"
             type="date"

@@ -34,7 +34,6 @@ const header = () => {
     <li className={Styles.listItem}>
     <Link href="/Map" alt="" className={Styles.LinkItem}>View Map</Link>
     </li>
-
     <li className={Styles.listItem}>
     <Link href="/faqs" alt="" className={Styles.LinkItem}>Help</Link>
     </li>
