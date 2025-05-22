@@ -10,7 +10,6 @@
   flex-direction: column;
   padding: 20px;
   z-index: 500;
-  margin-top: 60px;
   }
   
   .sidebar h2 {
@@ -78,4 +77,8 @@
   .submitButton:hover {
     background: #ffaa00;
   }
+
+
+
+  
   

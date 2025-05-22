@@ -112,27 +112,6 @@
     width: 100%;
 }
 
-@media screen and (max-width: 999px) {
-    .grid{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 5rem;
-        margin: 6rem auto;
-    }
-
-}
-
-
-
-@media screen and (max-width: 780px) {
-    .grid{
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 5rem;
-        margin: 6rem auto;
-    }
-
-}
 
 .button{
     background-color: #aa0b13;
@@ -145,4 +124,76 @@
 
 .button:hover{
     background-color: #f32121;
+}
+
+
+/* 📱 Small Devices (Phones < 768px) */
+@media (max-width: 767px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .container h1 {
+    font-size: 2.2rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 4rem auto;
+  }
+
+  .grid_card {
+    padding: 1.5rem;
+  }
+
+  .grid_card h2 {
+    font-size: 1.5rem;
+  }
+
+  .grid_card i {
+    font-size: 3rem;
+  }
+
+  .contact_form {
+    width: 100%;
+    min-width: unset;
+    padding: 2rem;
+  }
+
+  .label {
+    font-size: 1.2rem;
+  }
+
+  .mapping {
+    width: 100%;
+    height: 200px;
+  }
+}
+
+
+/* 📱📲 Medium Devices (Tablets 768px - 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    padding: 0 3rem;
+  }
+
+  .container h1 {
+    font-size: 3.2rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+
+  .grid_card {
+    padding: 2rem 3rem;
+  }
+
+  .contact_form {
+    width: 90%;
+    min-width: unset;
+    padding: 2.5rem;
+  }
 }

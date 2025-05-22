@@ -69,24 +69,24 @@
   padding: 230px;
 }
 
-/* Responsive for medium and smaller screens */
+
 @media (max-width: 1024px) {
   .buttonContainer {
-    position: relative;       /* no absolute */
+    position: relative;       
     left: auto;
     transform: none;
     justify-content: center;  /* center horizontally */
-    padding: 0;               /* remove big padding */
+    padding: 0;               
     margin-top: 30px;
   }
 
   .exploreButton {
-    margin-left: 0;           /* reset left margin */
+    margin-left: 0;           
   }
 }
 
 @media (max-width: 600px) {
   .buttonContainer {
-    margin-top: 20px;         /* smaller margin on very small */
+    margin-top: 20px;         
   }
 }

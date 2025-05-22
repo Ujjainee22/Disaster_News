@@ -92,7 +92,7 @@ console.log("Parameters recieved as ",stateName,disasterName,dtbefore,dtaft);
         ) : news.length > 0 ? (
           <>
             {/* ✅ Added Download JSON Button */}
-            <button onClick={handleDownload} style={{ marginBottom: "1rem" }}>
+            <button onClick={handleDownload} className={styles.button}>
               Download News as JSON
             </button>
 

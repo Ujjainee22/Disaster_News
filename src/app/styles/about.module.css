@@ -67,3 +67,49 @@
   min-height: 300px;
 }
 
+
+
+@media (max-width: 1024px) {
+  .text, .image {
+    flex: 1 1 100%;
+    padding: 30px;
+  }
+
+  .image {
+    min-height: 250px;
+  }
+
+  .text h1, .text h2 {
+    font-size: 1.75em;
+  }
+
+  .text p, .text li {
+    font-size: 1em;
+  }
+}
+
+/* Phones */
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+  }
+
+  .text, .image {
+    padding: 20px;
+  }
+
+  .text h1, .text h2 {
+    font-size: 1.5em;
+  }
+
+  .text p, .text li {
+    font-size: 0.95em;
+  }
+
+  .image {
+    min-height: 200px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
