@@ -79,3 +79,42 @@
   transform: scale(1.05);
 }
 
+/* Layout for map and info columns */
+.threeColumn {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 30px;
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  z-index: 2;
+}
+
+/* Side column for cyclone info */
+.infoColumn {
+  width: 250px;
+  max-height: 550px;
+  overflow-y: auto;
+  background-color: #f7f7f7;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual info cards */
+.infoCard {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-left: 4px solid #0070f3;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Map container stays fixed width */
+.mapContainer {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
