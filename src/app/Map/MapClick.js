@@ -34,7 +34,7 @@ const MapClick = ({ data }) => {
     const getCoords = async () => {
       try {
         const encodedState = encodeURIComponent(stateh);
-        const response = await fetch(`/api/forward?encodedStateh=${encodedState}`);
+        const response = await fetch(`/Api/forward?encodedStateh=${encodedState}`);
         const result = await response.json();
          console.log(result);
         if (result.length > 0) {

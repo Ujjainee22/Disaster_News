@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import styles from "@/app/feedback/contact.module.css";
+import axios from "axios"
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", message: "" });
@@ -10,9 +11,20 @@ export default function ContactForm() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitted:", formData);
+
+    try{
+
+      const response=  await axios.post('/api/data_backend' , formData) // if any other way 
+      console.log("Submitted:", formData);
+      alert("Form submitted successfully!");
+
+    }
+    catch (err){
+        console.log(err)
+    }
+
   };
 
   return (
@@ -72,7 +84,7 @@ export default function ContactForm() {
             name="message"
             id="message"
             rows={5}
-            placeholder="Enter your Message"
+            placeholder="Enter your message"
             value={formData.message}
             onChange={handleChange}
             required
@@ -82,7 +94,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <button type="submit">Send</button>
+        <button type="submit" className={styles.button}>Send</button>
       </div>
     </form>
   );

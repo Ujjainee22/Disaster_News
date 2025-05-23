@@ -1,48 +1,106 @@
 .parent {
-    width: 100%; 
-    height: max-content;
-    margin: 0 auto; 
-    padding-top: 12px;
-    padding-bottom: 12px;
-    background-color: black;
-    margin-bottom: 10px;
-      z-index: 2000;
-  }
-  
+  width: 100%;
+  background-color: black;
+  padding: 12px 20px;
+  position: relative;
+  z-index: 2000;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.logoImage {
+  height: 53px;
+  transform: scale(1.6);
+  transform-origin: center;
+  pointer-events: none;
+}
+
+.list {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 100px;
+  list-style: none;
+  font-family: Georgia, serif;
+  font-size: large;
+  padding: 0 20px;
+  margin: 0;
+  transition: max-height 0.3s ease-out;
+  overflow: hidden;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.listItem:hover {
+  transform: scale(1.1);
+}
+
+.LinkItem {
+  text-decoration: none;
+  color: white;
+}
+
+.iconStyle {
+  font-size: 32px;
+  color: white;
+}
+
+/* Hidden by default */
+.menuToggle {
+  display: none;
+  color: white;
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 3000;
+}
+
+/* 💻 Desktop ≥ 1024px — default styling remains */
+/* nothing needed here */
+
+/* 📝 Tablet: 600px–1023px */
+@media screen and (max-width: 1023px) and (min-width: 600px) {
   .list {
-    display: flex;
-    justify-content: space-around; 
-    align-items: center; 
-    gap: 100px; 
-    list-style: none;
-    font-family: Georgia, serif; 
-    font-size: large;
-    padding-left: 30px;
-    padding-right: 20px;
-    margin-top: -5px;
+    gap: 40px;
   }
-  
+
+  .logoImage {
+    transform: scale(1.4);
+  }
+}
+
+/* 📱 Mobile < 600px */
+@media screen and (max-width: 599px) {
+  .menuToggle {
+    display: block;
+  }
+
+  .list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 20px;
+    max-height: 0;
+  }
+
   .listItem {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    transition: transform 0.2s ease;
+    width: 100%;
+    justify-content: flex-start;
   }
-  
-  .listItem:hover {
-    transform: scale(1.1);
+
+  .showMenu {
+    max-height: 1000px;
   }
-  
-  .LinkItem {
-    text-decoration: none;
-    color: white;
-  }
-  
-  .iconStyle {
-    font-size: 32px; 
-    color: white;
-  }
-  
-  
-  
+}

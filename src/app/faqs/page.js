@@ -1,8 +1,15 @@
+"use client";
+
+
 import FAQ from "@/app/faqs/c_faq";
 import React from "react";
 import Feedback from '../feedback/page';
 import Footer from "../components/footer";
 import Header from "@/app/components/header";
+import styles from "@/app/faqs/faq.module.css";
+import { useState } from 'react';
+
+
 const faqs = [
   {
     question: "What was the most dangerous cyclone that hit india till date ?",
@@ -63,14 +70,30 @@ const faqs = [
 
 ];
 
-const FAQsPage = () => (
-  <div>
+const FAQsPage = () => {
+
+ const [openIndex, setOpenIndex] = useState(null);
+
+  const toggle = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  return (
+    <>
     <Header/>
-    <h1>FAQs</h1>
-    <FAQ faqs={faqs} />
-    <Feedback />
-    <Footer/>
-  </div>
+    <div className={styles.container}>
+      <h1 className={styles.heading}>FAQs</h1>
+      {faqs.map((item, index) => (
+        <div key={index} className={styles.faqCard} onClick={() => toggle(index)}>
+          <div className={styles.question}>{item.question}</div>
+          {openIndex === index && <div className={styles.answer}>{item.answer}</div>}
+        </div>
+      ))}
+      <Feedback/>
+      <Footer/>
+    </div>
+    </>
 );
+}
 
 export default FAQsPage;

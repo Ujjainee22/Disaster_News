@@ -20,8 +20,12 @@ const Panel = ({ onSubmit }) => {
         before: selectedDate,
         after: afterDate,
       });
+
+      alert("Submitted successfully!\nNow click on the map to select a location, then press 'Confirm' to proceed.");
+ 
+
     } else {
-      alert("Please select a disaster and state");
+      alert("Please select a disaster and state and a before & after date");
     }
   };
 
@@ -77,7 +81,7 @@ const Panel = ({ onSubmit }) => {
         </div>
 
         <div className={styles.menuItem}>
-          <label htmlFor="before">Select before date:</label>
+          <label htmlFor="before">Select Before Date:</label>
           <input
             id="before"
             type="date"
@@ -87,7 +91,7 @@ const Panel = ({ onSubmit }) => {
         </div>
 
         <div className={styles.menuItem}>
-          <label htmlFor="after">Select after date:</label>
+          <label htmlFor="after">Select After Date:</label>
           <input
             id="after"
             type="date"

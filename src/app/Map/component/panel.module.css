@@ -19,7 +19,6 @@
     padding-top: 50px;
     margin-left: 5px;
     font-size: 25px;
-
   }
   
   .menu {
@@ -40,8 +39,6 @@
     align-items: flex-start;
     gap: 5px;
     font-size: 20px;
-    
-    
   }
 
   
@@ -80,4 +77,8 @@
   .submitButton:hover {
     background: #ffaa00;
   }
+
+
+
+  
   

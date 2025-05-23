@@ -1,0 +1,69 @@
+/* map.module.css */
+
+.mapContainer {
+  position: relative;
+  display: flex;
+  height: 100vh; /* or whatever fits your layout */
+  flex-direction: row;
+}
+
+/* Panel styles */
+#panel {
+  flex: 0 0 300px; /* fixed width on desktop */
+  transition: transform 0.3s ease;
+}
+
+/* Map styles */
+.mapWrapper {
+  flex: 1;
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.mapInner {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+
+/* Toggle button styles */
+.toggleButton {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  display: none; /* hidden by default */
+}
+
+/* Panel hidden class */
+.hiddenPanel {
+  display: none !important;
+}
+
+/* === RESPONSIVE STYLES === */
+
+/* For screens smaller than 768px (mobile/tablet) */
+@media (max-width: 767px) {
+  .mapContainer {
+    flex-direction: column;
+  }
+
+  #panel {
+    width: 100%;
+    flex: none;
+  }
+
+  .mapWrapper {
+    padding-bottom: 50vh; /* taller aspect ratio for smaller screens */
+  }
+
+  /* Show toggle button on smaller screens */
+  .toggleButton {
+    display: block;
+  }
+}

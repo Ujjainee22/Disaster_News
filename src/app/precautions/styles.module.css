@@ -1,8 +1,15 @@
+.pageWrapper {
+  /*max-width: 1400px;  
+  margin: 0 auto;     
+  padding: 0 12px;*/
+  padding-left: 5vw;
+  padding-right: 5vw;
+  width: 100%;
+  box-sizing: border-box;    
+}
+
 .imageBackground {
-  /*background-image: url("/sm.webp");*/
-  /*background: linear-gradient(to right, #0f2027, #203a43, #2c5364); */
-  background: url('/embg2.webp'), 
-  linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 77, 64, 0.7));  
+   background: white;
   background-size: cover;
   background-blend-mode: overlay;
   background-attachment: fixed;
@@ -11,6 +18,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: 'Georgia',serif;
 }
 
 .textContent{
@@ -20,104 +28,121 @@
 }
 
 .textContent h1{
-  font-size: 47px;
-  font-weight: bold;
-  color:#ff5900;
-  padding-top: 15px;
-
+  font-size: 60px;
+  font-weight: bolder;
+  font-family: 'Georgia';
+  color:white;
+  background-color:rgb(188, 13, 13);
+  letter-spacing: 10px;
+  word-spacing: 8px;
+  text-align: center;
+  margin-top: 37px;
+  width:90vw;
 }
 
 .textContent h2{
-  font-size: 41px;
-  font-weight: bold;
+  font-size: 60px;
+  font-family:'Franklin Gothic Heavy ';
+  color: black;
+  margin-top: 2x;
+  margin-bottom: 15px;
+  width:90vw;
 
-  color: white;
-  margin-bottom: 20px;
 }
+
 .listContainer{
-  width:90%;
-  background: rgba(249, 138, 3, 0.623);
-
-  padding-right: 20px;
-  padding-left: 20px;
-  text-align: center;
-  color: white;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  justify-content: center;
-  text-align: left;
-  margin: 0 auto;
-  border-radius: 10px;
-  height: 560px;
-
-}
-
-.listContainer b {
-  color: #800000;
-}
-
-
-
-.disasterCard {
-  width: 100%;
-  background: rgba(243, 238, 235, 0.51);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 20px;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(222, 139, 30, 0.2);
-  height: auto;
-  margin: 0 auto;
-  margin-bottom: 10px;
+  display:grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 2rem;
+  font-family: 'Georgia',serif;
+  line-height: 1.3;
+  letter-spacing: 0.1px;
+  margin: 10px;
+  align-items: start;
+  text-align: justify;
+  padding: top 0;
 
 }
 
 .listContainer ul{
   list-style-type: none;
+  margin-top: 0;  
 }
 .listContainer li{
-  text-align: justify;
+
   font-size: 30px;
   margin-bottom: 10px;
 }
 
-.disasterContainer {
-  width: 90%;
+
+.sectionHeading {
+  font-size: 35px;
+  font-weight:bold;
+  font-family: 'Georgia';
+  color: black;
+  border-bottom: 4px solid #000;
+  padding-bottom: 0.3rem;
+  margin-bottom:0;
+
+  
+}
+
+
+
+.disasterCard {
   display: flex;
-  flex-direction: column; 
-  align-items: center;
-  gap: 20px;
-  margin:0 auto;
-  margin-top: 20px;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 0 1rem;
+  border-left: 2px solid #000;
+  
+
+
+}
+
+.disasterCard:nth-child(3n + 1) {
+  border-left: none;
+}
+
+
+.disasterContainer {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 2rem;
+  position: relative;
+  margin-bottom: 50px;
+  grid-auto-rows: auto;
 
 }
 
 .disasterImage {
-  flex: 0 0 35%; /* Takes 30% of the disasterCard width */
-  height: 100%; 
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  
 }
 
 .disasterImage img {
   width: 100%;
-  height: 100%; 
-  object-fit: cover; 
-  border-radius: 10px;
+  height:300px ;
+  object-fit:cover; 
 }
 
+
 .disasterContent p{
-  font-size: 38px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-size: 35px;
   font-weight: bolder;
-  color:black;
+  text-transform: uppercase;
+  border-bottom: 4px solid black;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.2rem;
+  max-width: 2000;
+  text-align: justify;
+  color:rgb(188, 13, 13);
+  padding-left: 4px;
+  padding-right: 4px;
   
 }
 
@@ -130,7 +155,7 @@
 
 .disasterContent ul li,
 .disasterContent ol li {
-  font-size: 1.1rem;
+  font-size: 27px;
   margin-bottom: 5px;
   line-height: 1.5;
 }
@@ -138,7 +163,7 @@
 .disasterContent ul li::before {
   content: "⚠"; /* Warning sign for extra emphasis */
   color: rgb(255, 51, 0);
-  font-size: 1.2rem;
+  font-size: 30px;
   margin-right: 5px;
 }
 
@@ -168,3 +193,93 @@
   color: #333;
 }
 
+.section{
+  margin-bottom: 22px;
+}
+
+@media screen and (max-width: 1023px) and (min-width: 600px) {
+  .textContent h1 {
+    font-size: 45px;
+    letter-spacing: 6px;
+  }
+
+  .textContent h2 {
+    font-size: 35px;
+  }
+
+  .listContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .disasterContainer {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    grid-template-rows: repeat(3, auto); 
+    grid-auto-rows: auto;
+ }
+
+  .disasterContent li {
+    font-size: 22px;
+  }
+
+  .disasterContent p {
+    font-size: 26px;
+  }
+  .disasterCard {
+    border-left: 2px solid #000;
+  }
+  
+}
+
+/* Small Screens (599px and below) */
+@media screen and (max-width: 599px) {
+  .textContent h1 {
+    font-size: 30px;
+    letter-spacing: 4px;
+  }
+
+  .textContent h2 {
+    font-size: 24px;
+  }
+
+  .listContainer {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .listContainer li {
+    font-size: 18px;
+  }
+
+  .disasterContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+    grid-template-rows: none; /* let it flow naturally */
+    gap: 1.5rem;
+  }
+
+  .disasterContent p {
+    font-size: 22px;
+  }
+
+  .disasterContent li {
+    font-size: 18px;
+  }
+
+  .downloadButton {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .disasterCard {
+    border-left: none;
+    flex-direction: column;
+  }
+
+  .disasterImage img {
+    height: auto !important;
+    max-height: none !important;
+    width: 100%;
+    object-fit: contain;
+  }
+}
