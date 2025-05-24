@@ -16,7 +16,7 @@ export default function ContactForm() {
 
     try{
 
-      const response=  await axios.post('/api/data_backend' , formData) // if any other way 
+      const response=  await axios.post('/Dbapi/data_backend' , formData) // if any other way 
       console.log("Submitted:", formData);
       alert("Form submitted successfully!");
 

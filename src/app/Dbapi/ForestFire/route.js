@@ -6,6 +6,28 @@ export async function GET() {
   try {
     const client = await clientPromise;
     const db = client.db("MapInformation");//database
+    const collection = db.collection("Flood");//table name
+
+    const data = await collection.find({}).toArray();
+
+    return new Response(JSON.stringify(data), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  } catch (error) {
+    return new Response(JSON.stringify({ error: 'Error fetching data' }), { status: 500 });
+  }
+}
+*/
+
+/*// app/api/cyclones/route.js
+import clientPromise from "@/app/lib/mongodb";
+
+
+export async function GET() {
+  try {
+    const client = await clientPromise;
+    const db = client.db("MapInformation");//database
     const collection = db.collection("Earthquake");//table name
 
     const data = await collection.find({}).toArray();
@@ -31,7 +53,7 @@ export async function GET() {
     }
 
     const db = mongoose.connection.useDb("MapInformation");
-    const Cyclone = db.collection("Earthquake");
+    const Cyclone = db.collection("ForestFire");
 
     const data = await Cyclone.find({}).toArray();
 
