@@ -6,7 +6,7 @@ const MapButton = () => {
   return (
     <div>
       <Link href="/Map">
-        <button class={Styles.mapbutton }>
+        <button className={Styles.mapbutton }>
           Click to view Map <IoLocationSharp />
         </button>
       </Link>

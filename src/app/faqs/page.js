@@ -57,11 +57,7 @@ const faqs = [
     answer:
       "Please check the navigation part of the 'HELP' section of our site",
   },
-  {
-    question: "How to use your website ?",
-    answer:
-      "Please check the navigation part of the 'HELP' section of our site",
-  },
+  
   {
     question: "Deadliest landslide till date in India?",
     answer:
