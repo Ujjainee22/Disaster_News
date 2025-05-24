@@ -10,7 +10,7 @@ const Page = () => {
   const [info, setInfo] = useState([]);
 
   useEffect(() => {
-    fetch('/Dbapi/LandSlide')
+    fetch('/Dbapi/Landslide')
       .then(res => res.json())
       .then(data => setInfo(data));
   }, []);
