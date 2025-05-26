@@ -6,10 +6,10 @@ import Styles from "@/app/disaster/disaster.module.css";
 const BackButton = () => {
   return (
     <div className={Styles.backButtonWrapper}>
-      <Link href="/content">
-        <button className={Styles.backbutton}>
+      <Link href="/content" className={Styles.backbutton}>
+        
           <IoArrowBackCircle /> Back
-        </button>
+      
       </Link>
     </div>
   );

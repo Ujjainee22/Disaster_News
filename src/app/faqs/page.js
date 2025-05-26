@@ -32,10 +32,7 @@ const faqs = [
     question: "How can landslides be prevented in hilly areas?",
     answer:
       "Landslides in hilly areas can be prevented by planting deep-rooted vegetation, constructing retaining walls, and using proper drainage systems to reduce water buildup. Additionally, restricting construction on steep slopes and conducting regular soil stability checks can help minimize risks.",  },
-  {
-    question: "Which regions of India are most affected by droughts?",
-    answer:
-      "",  },
+  
   {
     question: "Which is the most dangerous forest fire in india till date ",
     answer:
@@ -57,11 +54,7 @@ const faqs = [
     answer:
       "Please check the navigation part of the 'HELP' section of our site",
   },
-  {
-    question: "How to use your website ?",
-    answer:
-      "Please check the navigation part of the 'HELP' section of our site",
-  },
+  
   {
     question: "Deadliest landslide till date in India?",
     answer:
