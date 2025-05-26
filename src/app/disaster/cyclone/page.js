@@ -8,13 +8,24 @@ import Back from "@/app/disaster/backbutton";
 
 const Page = () => {
   const [info, setInfo] = useState([]);
+  const [loading, setLoading] = useState(true); // load variable acts like a  flag
+  // initially loading is always true 
+
 
   useEffect(() => {
     fetch('/Dbapi/Cyclone')
       .then(res => res.json())
-      .then(data => setInfo(data));
+      .then(data => {
+        setInfo(data); 
+        setLoading(false); // setting loading false initially
+      })
   }, []);
 
+if (loading) {
+    return <p >Loading...</p>; // print loading until loading is false
+  }
+
+   // now come to this part
   return (
     <>
       <div className={Styles.main}>
