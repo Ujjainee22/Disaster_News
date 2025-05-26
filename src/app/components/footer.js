@@ -9,7 +9,7 @@ export default function Footer() {
         <div className={styles.footer_section}>
           <h3>INFORMATION</h3>
           <ul>
-            <li><Link href="#">About Us</Link></li>
+            <li><Link href="/about">About Us</Link></li>
             <li><Link href="#">API</Link></li>
             <li><Link href="#">Search Trends</Link></li>
           </ul>

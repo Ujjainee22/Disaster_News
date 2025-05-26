@@ -54,12 +54,12 @@
 }
 
 .redText {
-  color: #e61919;
+  color: #8b0000;
   margin-bottom: 0px;
 }
 
 .blueText {
-  color: #160b5d;
+  color: #1b0e6f;
   margin-bottom: 0px;
   letter-spacing: 6px;
 }
@@ -96,7 +96,7 @@
 
 .newsSection h2 {
   font-size: 26px;
-  color: #111;
+  color: #8b0000;
   font-weight: bold;
   margin-bottom: 10px;
   text-transform: uppercase;
