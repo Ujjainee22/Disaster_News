@@ -25,7 +25,7 @@ const Page = () => {
 
 
 if (loading) {
-    return <p >Loading...</p>; // print loading until loading is false
+    return <div className={Styles.loadtext}>Loading...</div>; // print loading until loading is false
   }
 
 

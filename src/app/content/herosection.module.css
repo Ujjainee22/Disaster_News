@@ -105,6 +105,17 @@
     height: auto;
 }
 
+.loadtext{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  padding-top: 20vh;
+  font-weight: bold;
+  font-size: 1.5rem; 
+
+}
+
 @media (max-width: 599px) {
   .newspaper {
     padding: 10px;

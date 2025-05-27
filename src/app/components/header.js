@@ -33,7 +33,7 @@ const Header = () => {
         </li>
         <li className={Styles.listItem}>
           <div className={Styles.logoContainer}>
-            <img src="/logo1.png" alt="Website Logo" className={Styles.logoImage} />
+            <img src="/logo_final.png" alt="Website Logo" className={Styles.logoImage} />
           </div>
         </li>
         <li className={Styles.listItem}>
