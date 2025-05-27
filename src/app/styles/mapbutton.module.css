@@ -1,6 +1,6 @@
 .mapbutton {
-  position: fixed;
-  bottom: 30px;
+  position:absolute;
+  bottom: 15px;
   right: 20px;
   background-color: black;
   color: white;

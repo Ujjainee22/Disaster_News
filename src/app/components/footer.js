@@ -42,7 +42,7 @@ export default function Footer() {
         </div>
       </div>
       <div className={styles.footer_bottom}>
-        <p>Copyright © Disaster Management</p>
+        <p>Copyright © Disaster news</p>
       </div>
     </footer>
   );

@@ -20,7 +20,7 @@ export default function AboutPage() {
       </section>
 
       <section className={styles.section}>
-        <div className={styles.image} style={{ backgroundImage: "url('/logo1.png')" }}></div>
+        <div className={styles.image} style={{ backgroundImage: "url('/logo_final.png')" }}></div>
         <div className={styles.text}>
           <h2>What We Do</h2>
           <ul>

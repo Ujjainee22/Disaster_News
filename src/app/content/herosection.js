@@ -36,7 +36,7 @@ const Page = () => {
   }, []);
 
   if (loading) {
-    return <p>Loading...</p>; // render hobena while loading & loading print hobe 
+    return <div className={Styles.loadtext}>Loading...</div>; // render hobena while loading & loading print hobe 
   }
 
   // loading false hole , then only access this part
