@@ -8,7 +8,7 @@ export async function GET() {
     }
 
     const db = mongoose.connection.useDb("MapInformation");
-    const Cyclone = db.collection("Cyclone");
+    const Cyclone = db.collection("Landslide");
 
     const data = await Cyclone.find({}).toArray();
 

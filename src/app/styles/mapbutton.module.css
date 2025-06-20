@@ -1,8 +1,8 @@
 .mapbutton {
-  position: fixed;
-  bottom: 30px;
+  position:absolute;
+  bottom: 15px;
   right: 20px;
-  background-color: #003f5c;
+  background-color: black;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -16,6 +16,11 @@
 }
 
 .mapbutton:hover {
-  background-color: #005b7f;
-  transform: scale(1.05);
+  background-color: rgba(255, 140, 0, 1);
+  transform: scale(1.08);
+}
+
+.mapbutton:active{
+  background-color: rgba(255, 50, 0, 1);
+  transform: scale(0.95);
 }

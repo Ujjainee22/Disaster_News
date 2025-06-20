@@ -7,8 +7,8 @@ export async function GET() {
       await mongoose.connect(connStr);
     }
 
-    const db = mongoose.connection.useDb("MapInformation");
-    const Cyclone = db.collection("Cyclone");
+    const db = mongoose.connection.useDb("Content");
+    const Cyclone = db.collection("cont1");
 
     const data = await Cyclone.find({}).toArray();
 

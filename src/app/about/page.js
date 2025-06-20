@@ -13,14 +13,14 @@ export default function AboutPage() {
       <section className={styles.section}>
         <div className={styles.text}>
           <h1>Our Mission</h1>
-          <p>Welcome to <b>Real-Time disaster Update</b>, a platform dedicated to providing real-time, multilingual disaster news from across India.</p>
+          <p>Welcome to our website, a platform dedicated to providing real-time, multilingual disaster news from across India.</p>
           <p>India's linguistic and geographical diversity often makes disaster news fragmented and inaccessible. Our mission is to streamline disaster reporting by aggregating, organizing, and presenting real-time news in multiple languages on a unified platform, making critical information more accessible and actionable.</p>
         </div>
         <div className={styles.image} style={{ backgroundImage: "url('/ab4.webp')" }}></div>
       </section>
 
       <section className={styles.section}>
-        <div className={styles.image} style={{ backgroundImage: "url('/lgfin.png')" }}></div>
+        <div className={styles.image} style={{ backgroundImage: "url('/logo_final.png')" }}></div>
         <div className={styles.text}>
           <h2>What We Do</h2>
           <ul>

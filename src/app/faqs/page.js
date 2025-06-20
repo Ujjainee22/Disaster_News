@@ -35,7 +35,7 @@ const faqs = [
   {
     question: "Which regions of India are most affected by droughts?",
     answer:
-      "",  },
+      "Major drought-prone regions of India are : southeastern Maharashtra, northern Karnataka, Andhra Pradesh, Odisha, Gujarat, Telangana, and Rajasthan.",  },
   {
     question: "Which is the most dangerous forest fire in india till date ",
     answer:
@@ -57,6 +57,11 @@ const faqs = [
     answer:
       "Please check the navigation part of the 'HELP' section of our site",
   },
+  /*{
+    question: "How to use your website ?",
+    answer:
+      "Please check the navigation part of the 'HELP' section of our site",
+  },*/ 
   
   {
     question: "Deadliest landslide till date in India?",
