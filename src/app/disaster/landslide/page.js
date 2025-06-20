@@ -8,21 +8,19 @@ import Back from "@/app/disaster/backbutton";
 
 const Page = () => {
   const [info, setInfo] = useState([]);
-    const [loading, setLoading] = useState(true); // load variable acts like a  flag
+  const [loading, setLoading] = useState(true); // load variable acts like a  flag
   // initially loading is always true 
 
 
 
   useEffect(() => {
-    fetch('/Dbapi/Landslide')
+    fetch('/Dbapi/LandSlide')
       .then(res => res.json())
-           .then(data => {
+      .then(data => {
         setInfo(data); 
         setLoading(false); // setting loading false initially
       })
-
   }, []);
-
 
 if (loading) {
     return <div className={Styles.loadtext}>Loading...</div>; // print loading until loading is false
@@ -34,7 +32,7 @@ if (loading) {
       <div className={Styles.main}>
         <Back />
         <Mapbutton />
-        <p className={Styles.head}>The LandSlide Prone Areas in India</p>
+        <p className={Styles.head}>The Landslide Prone Areas in India</p>
 
         <div className={Styles.threeColumn}>
           {/* Left Column */}
@@ -45,8 +43,7 @@ if (loading) {
                 
                 <strong>{item.name}</strong>
                 <br></br>
-               <p><strong>Places Affected</strong>{item.state}</p> 
-                <br></br>
+               
                 <p>{item.info}</p>
               </div>
             ))}
@@ -72,8 +69,8 @@ if (loading) {
                 
                 <strong>{item.name}</strong>
                 <br></br>
-               <p><strong>Places Affected</strong>{item.state}</p> 
-                <br></br>
+              
+                
                 <p>{item.info}</p>
               </div>
             ))}
