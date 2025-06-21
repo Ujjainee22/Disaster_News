@@ -16,7 +16,7 @@ const Home = () => {
         <div className={styles.content}>
          <h1 className={styles.title}>
             Real-Time Disaster Updates</h1>
-        <p className={styles.subtitle}>Get the latest news on Indian disasters and emergencies.</p>
+        <p className={styles.subtitle}>Get the latest news on disasters and emergencies in India.</p>
         <Link href="/content" className={styles.exploreButton}>Explore</Link>
       
   
